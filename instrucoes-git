@@ -1,0 +1,21 @@
+Codigos importantes do git
+
+* É preciso instalar o git na sua maquina: https://git-scm.com/downloads
+* Guia do git: http://rogerdudler.github.io/git-guide/index.pt_BR.html
+
+                 -----  Primeira vez apos instalar o Git ---------
+1) git config --global user.name "Seu nome" --- Defina um nome para você.
+2) git config --global user.email seuemail@example.com  --- Bote o seu email(o mesmo utilizado na conta do GITHUB)
+                     ------------------ FIM ------------------
+
+------ AO LONGO DO SEU PROJETO ---------
+
+1) git pull origin master - Atualiza o projeto 
+
+2) git status - mostra o que voce mudou no codigo do projeto  
+
+3) git add * - Adiciona a suas alterações para fazer o commit
+
+4) git commit -m "comentários das alterações"  - Faz o commit para subir para o github
+
+5) git push origin master - Envia suas alterações para o repositorio remoto (gitHub)
