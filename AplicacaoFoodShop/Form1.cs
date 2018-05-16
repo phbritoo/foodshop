@@ -31,7 +31,7 @@ namespace AplicacaoFoodShop
                 loja.NomeFantasia = textBox2.Text;
                 loja.RazaoSocial = textBox3.Text;
                 LojaDAOImpl lojadao = new LojaDAOImpl();
-                lojadao.Insert(loja);
+                lojadao.Delete(loja);
                 MessageBox.Show("Loja cadastrada");
 
             }
