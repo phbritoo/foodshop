@@ -26,13 +26,14 @@ namespace AplicacaoFoodShop
             {
                 
 
-                Loja loja = new Loja();
-                loja.Cnpj = Convert.ToInt32(textBox1.Text);
-                loja.NomeFantasia = textBox2.Text;
-                loja.RazaoSocial = textBox3.Text;
-                LojaDAOImpl lojadao = new LojaDAOImpl();
-                lojadao.Delete(loja);
-                MessageBox.Show("Loja cadastrada");
+                Cartao cartao = new Cartao();
+                cartao.Numero = textBox1.Text;
+                cartao.Bandeira = textBox2.Text;
+                cartao.DataValidade = Convert.ToDateTime(textBox3.Text);
+                cartao.CodigoSeguranca = textBox4.Text;
+                CartaoDAOImpl cartaodao = new CartaoDAOImpl();
+                cartaodao.Insert(cartao);
+                MessageBox.Show("Cartão cadastrado");
 
             }
             catch (Exception ex)
@@ -40,6 +41,34 @@ namespace AplicacaoFoodShop
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cartao cartao = new Cartao();
+                CartaoDAOImpl cartaodao = new CartaoDAOImpl();
+                //if (textBox5.Text != "")
+                //{
+                //    cartao.Numero = (textBox5.Text);
+                //}
+                listView1.Items.Clear();
+                foreach (Cartao x in cartaodao.Select(cartao))
+                {
+                    ListViewItem lista = listView1.Items.Add(x.Numero);
+                    lista.SubItems.Add(x.Bandeira);
+                    lista.SubItems.Add(Convert.ToString(x.DataValidade));
+                    lista.SubItems.Add(x.CodigoSeguranca);
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

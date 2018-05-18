@@ -8,18 +8,17 @@ using BibliotecaShopFood.Conexao;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace BibliotecaShopFood.Dados
 {
-    public class LojaDAOImpl : ConexaoBdSql, LojaDAO
-
-
+    public class CartaoDAOImpl : ConexaoBdSql, CartaoDAO
     {
-        public void Delete(Loja loja)
+        public void Delete(Cartao cartao)
         {
             try
             {
                 this.abrirConexao();
-                sql = "delete from loja where cnpj = " + loja.Cnpj;
+                sql = "delete from cartaocredito where numero = " + cartao.Numero;
                 executaSql();
             }
             catch (Exception ex)
@@ -28,15 +27,16 @@ namespace BibliotecaShopFood.Dados
                 throw new Exception("Erro ao conectar e remover" + ex.Message);
             }
         }
+    
 
-        public void Insert(Loja loja)
+        public void Insert(Cartao cartao)
         {
             try
             {
                 this.abrirConexao();
-                sql = "insert into loja (CNPJ, RAZAOSOCIAL, NOMEFANTASIA) values(" + loja.Cnpj + ",'"+loja.RazaoSocial+"','"+loja.NomeFantasia+"')" ;
+                sql = "insert into cartaocredito (numero, bandeira, datavalidade, codigoseguranca) values('" + cartao.Numero + "','" + cartao.Bandeira + "','" + cartao.DataValidade + "','" + cartao.CodigoSeguranca + "')";
                 executaSql();
-                
+
             }
             catch (Exception ex)
             {
@@ -45,58 +45,59 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        public List<Loja> Select(Loja filtro)
+        public List<Cartao> Select(Cartao filtro)
         {
-            List<Loja> retorno = new List<Loja>();
+            List<Cartao> retorno = new List<Cartao>();
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT CNPJ, RAZAOSOCIAL, NOMEFANTASIA FROM loja where cnpj = cnpj";
-                if (filtro.Cnpj > 0)
+                string sql = "SELECT numero, bandeira, datavalidade, codigoseguranca FROM cartaocredito where id = id";
+                if (filtro.Numero != null )
                 {
-                    sql += " and cnpj = " + filtro.Cnpj;
+                    sql += " and numero like '%" + filtro.Numero + "%'";
                 }
-                if (filtro.RazaoSocial != null && filtro.RazaoSocial.Trim().Equals("") == false)
+                if (filtro.Bandeira != null && filtro.Bandeira.Trim().Equals("") == false)
                 {
-                    sql += " and razaosocial like '%" + filtro.RazaoSocial + "%'";
-                }
-
-                if (filtro.NomeFantasia != null && filtro.NomeFantasia.Trim().Equals("") == false)
-                {
-                    sql += " and nomefantasia like '%" + filtro.NomeFantasia + "%'";
+                    sql += " and bandeira like '%" + filtro.Bandeira + "%'";
                 }
 
-                
+               if (filtro.CodigoSeguranca != null && filtro.CodigoSeguranca.Trim().Equals("") == false)
+                {
+                    sql += " and codigoseguranca like '%" + filtro.Bandeira + "%'";
+
+                }
+
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
-                    Loja loja = new Loja();
-                    loja.Cnpj = DbReader.GetInt32(DbReader.GetOrdinal("cnpj"));
-                    loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
-                    loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
-                    retorno.Add(loja);
+                     Cartao cartao = new Cartao();
+                     cartao.Numero = DbReader.GetString(DbReader.GetOrdinal("numero"));
+                     cartao.Bandeira = DbReader.GetString(DbReader.GetOrdinal("bandeira"));
+                     cartao.DataValidade = DbReader.GetDateTime(DbReader.GetOrdinal("datavalidade"));
+                     cartao.CodigoSeguranca = DbReader.GetString(DbReader.GetOrdinal("codigoseguranca"));
+                     retorno.Add(cartao);
                 }
                 DbReader.Close();
                 cmd.Dispose();
                 this.fecharConexao();
-                             
+                
             }
             catch (Exception ex)
             {
                 throw new Exception("Erro ao conectar e selecionar" + ex.Message);
             }
             return retorno;
-            
+
         }
 
-        public void Update(Loja loja)
+        public void Update(Cartao cartao)
         {
             try
             {
 
                 this.abrirConexao();
-                string sql = "update loja set cnpj =" + loja.Cnpj + ",razaosocial = '" + loja.RazaoSocial + "', nomefantasia = '" + loja.NomeFantasia + " ' where cnpj = " + loja.Cnpj;
+                string sql = "update cartaocredito set numero ='" + cartao.Numero + "', bandeira = '" + cartao.Bandeira + "', datavalidade = '" + cartao.DataValidade + "', codigoseguranca = '" + cartao.CodigoSeguranca + " ' where numero = '" + cartao.Numero + "'";
                 executaSql();
             }
             catch (Exception ex)
@@ -106,13 +107,13 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        public bool VerificaDuplicidade(Loja loja)
+        public bool VerificaDuplicidade(Cartao cartao)
         {
             bool retorno = false;
             try
             {
                 this.abrirConexao();
-                string sql = "select cnpj, razaosocial, nomefantasia from loja where cnpj =" + loja.Cnpj;
+                string sql = "select numero, bandeira, datavalidade, codigoseguranca from cartaocredito where numero = '" + cartao.Numero + "'";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
