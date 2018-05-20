@@ -43,12 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ClassesBasicas\Carrinho.cs" />
     <Compile Include="ClassesBasicas\Cartao.cs" />
     <Compile Include="ClassesBasicas\Loja.cs" />
     <Compile Include="ClassesBasicas\NotaFiscal.cs" />
     <Compile Include="ClassesBasicas\Produto.cs" />
     <Compile Include="ClassesBasicas\Usuario.cs" />
     <Compile Include="Conexao\ConexaoBdSql.cs" />
+    <Compile Include="Dados\CarrinhoDAO.cs" />
+    <Compile Include="Dados\CarrinhoDAOImpl.cs" />
     <Compile Include="Dados\CartaoDAO.cs" />
     <Compile Include="Dados\CartaoDAOImpl.cs" />
     <Compile Include="Dados\LojaDAO.cs" />
