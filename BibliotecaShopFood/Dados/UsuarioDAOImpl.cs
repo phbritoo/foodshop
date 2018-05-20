@@ -8,17 +8,16 @@ using BibliotecaShopFood.Conexao;
 using System.Data;
 using System.Data.SqlClient;
 
-
 namespace BibliotecaShopFood.Dados
 {
-    public class ProdutoDAOImpl : ConexaoBdSql, ProdutoDAO
+    public class UsuarioDAOImpl : ConexaoBdSql, UsuarioDAO
     {
-        public void Delete(Produto produto)
+        public void Delete(Usuario usuario)
         {
             try
             {
                 this.abrirConexao();
-                sql = "delete from produto where codigobarra = " + produto.CodigoBarra;
+                sql = "delete from usuario where cpf = " + usuario.Cpf;
                 executaSql();
             }
             catch (Exception ex)
@@ -28,12 +27,12 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        public void Insert(Produto produto)
+        public void Insert(Usuario usuario)
         {
             try
             {
                 this.abrirConexao();
-                sql = "insert into produto (codigobarra, nome, descricao, marca) values('" + produto.CodigoBarra + "','" + produto.Nome + "','" + produto.Descricao + "','" + produto.Marca + "')";
+                sql = "insert into usuario (cpf, nome, datanascimeto, endereco, telefone, isadm) values('" + usuario.Cpf + "','" + usuario.Nome + "','" + usuario.DataNascimento + "','" + usuario.Telefone + "','" + usuario.IsAdm + "')";
                 executaSql();
 
             }
@@ -44,31 +43,31 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        public List<Produto> Select(Produto filtro)
+        public List<Usuario> Select(Usuario filtro)
         {
-            List<Produto> retorno = new List<Produto>();
+            List<Usuario> retorno = new List<Usuario>();
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT codigobarra, nome, descricao, marca FROM produto where id = id";
-                if (filtro.CodigoBarra != null)
+                string sql = "SELECT cpf, nome, datanascimento, endereco, telefone, isadm FROM usuario where id = id";
+                if (filtro.Cpf != null)
                 {
-                    sql += " and codigobarra like '%" + filtro.CodigoBarra + "%'";
+                    sql += " and cpf like '%" + filtro.Cpf + "%'";
                 }
                 if (filtro.Nome != null && filtro.Nome.Trim().Equals("") == false)
                 {
                     sql += " and nome like '%" + filtro.Nome + "%'";
                 }
 
-                if (filtro.Descricao != null && filtro.Descricao.Trim().Equals("") == false)
+                if (filtro.Endereco != null && filtro.Endereco.Trim().Equals("") == false)
                 {
-                    sql += " and descricao like '%" + filtro.Descricao + "%'";
+                    sql += " and endereco like '%" + filtro.Endereco + "%'";
 
                 }
 
-                if (filtro.Marca != null && filtro.Marca.Trim().Equals("") == false)
+                if (filtro.Telefone != null && filtro.Telefone.Trim().Equals("") == false)
                 {
-                    sql += " and marca like '%" + filtro.Marca + "%'";
+                    sql += " and telefone like '%" + filtro.Telefone + "%'";
 
                 }
 
@@ -76,12 +75,14 @@ namespace BibliotecaShopFood.Dados
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
-                    Produto produto = new Produto();
-                    produto.CodigoBarra = DbReader.GetString(DbReader.GetOrdinal("codigobarra"));
-                    produto.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
-                    produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
-                    produto.Marca = DbReader.GetString(DbReader.GetOrdinal("marca"));
-                    retorno.Add(produto);
+                    Usuario usuario = new Usuario();
+                    usuario.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
+                    usuario.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    usuario.DataNascimento = DbReader.GetDateTime(DbReader.GetOrdinal("datanascimento"));
+                    usuario.Endereco = DbReader.GetString(DbReader.GetOrdinal("endereco"));
+                    usuario.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
+                    usuario.IsAdm = DbReader.GetString(DbReader.GetOrdinal("isadm"));
+                    retorno.Add(usuario);
                 }
                 DbReader.Close();
                 cmd.Dispose();
@@ -95,13 +96,13 @@ namespace BibliotecaShopFood.Dados
             return retorno;
         }
 
-        public void Update(Produto produto)
+        public void Update(Usuario usuario)
         {
             try
             {
 
                 this.abrirConexao();
-                string sql = "update produto set codigobarra ='" + produto.CodigoBarra + "', nome = '" + produto.Nome + "', descricao = '" + produto.Descricao + "', marca = '" + produto.Marca + " ' where codigobarra = '" + produto.CodigoBarra + "'";
+                string sql = "update produto set cpf ='" + usuario.Cpf + "', nome = '" + usuario.Nome + "', datanascimento = '" + usuario.DataNascimento + "', endereco = '" + usuario.Endereco + "', telefone = '" + usuario.Telefone + "', isadm = '" + usuario.IsAdm + "' where cpf = '" + usuario.Cpf + "'";
                 executaSql();
             }
             catch (Exception ex)
@@ -111,13 +112,13 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        public bool VerificaDuplicidade(Produto produto)
+        public bool VerificaDuplicidade(Usuario usuario)
         {
             bool retorno = false;
             try
             {
                 this.abrirConexao();
-                string sql = "select codigobarra, nome, descricao, marca from produto where codigobarra = '" + produto.CodigoBarra + "'";
+                string sql = "select cpf, nome, datanascimento, endereco, telefone, isadm from usuario where cpf = '" + usuario.Cpf + "'";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())

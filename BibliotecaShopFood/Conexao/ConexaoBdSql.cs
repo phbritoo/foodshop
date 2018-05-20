@@ -11,7 +11,7 @@ namespace BibliotecaShopFood.Conexao
     {
         public SqlConnection sqlConn;
         public String sql;
-        private const string local = @"DESKTOP-A8Q224L\SQLEXPRESS";
+        private const string local = @"CASA\SQLEXPRESS";
         private const string banco_de_dados = "SHOPFOOD";
         private const string usuario = "camilo";
         private const string senha = "140784";
