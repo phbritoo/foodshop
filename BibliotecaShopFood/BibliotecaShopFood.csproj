@@ -56,7 +56,9 @@
     <Compile Include="Dados\CartaoDAOImpl.cs" />
     <Compile Include="Dados\LojaDAO.cs" />
     <Compile Include="Dados\LojaDAOImpl.cs" />
+    <Compile Include="Dados\NotaFiscalDAO.cs" />
     <Compile Include="Dados\ProdutoDAO.cs" />
+    <Compile Include="Dados\NotaFiscalDAOImpl.cs" />
     <Compile Include="Dados\ProdutoDAOImpl.cs" />
     <Compile Include="Dados\UsuarioDAO.cs" />
     <Compile Include="Dados\UsuarioDAOImpl.cs" />

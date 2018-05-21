@@ -12,7 +12,12 @@ namespace BibliotecaShopFood.ClassesBasicas
         private DateTime dataEmissao;
         private decimal precoTotal;
         private int quantidadeProduto;
-        
+        private Carrinho carrinho;
 
+        public int Numero { get => numero; set => numero = value; }
+        public DateTime DataEmissao { get => dataEmissao; set => dataEmissao = value; }
+        public decimal PrecoTotal { get => precoTotal; set => precoTotal = value; }
+        public int QuantidadeProduto { get => quantidadeProduto; set => quantidadeProduto = value; }
+        public Carrinho Carrinho { get => carrinho; set => carrinho = value; }
     }
 }
