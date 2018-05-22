@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace BibliotecaShopFood.Dados
 {
-    public class NotafiscalDAOImpl : ConexaoBdSql, ProdutoDAO
+    public class NotafiscalDAOImpl : ConexaoBdSql, NotaFiscalDAO
     {
         public void Delete(NotaFiscal notaFiscal)
         {
