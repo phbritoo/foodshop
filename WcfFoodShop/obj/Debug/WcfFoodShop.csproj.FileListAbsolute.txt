@@ -1,0 +1,7 @@
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\WcfFoodShop.dll.config
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\WcfFoodShop.dll
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\WcfFoodShop.pdb
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csprojResolveAssemblyReference.cache
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CoreCompileInputs.cache
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.dll
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.pdb
