@@ -16,18 +16,15 @@ namespace BibliotecaShopFood.ClassesBasicas
         private int id;
         private String numero;
         private String bandeira;
-        private DateTime dataValidade;
         private String codigoSeguranca;
 
-        [DataMember(IsRequired =true)]
+      
         public int Id { get => id; set => id = value; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Numero { get => numero; set => numero = value; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string Bandeira { get => bandeira; set => bandeira = value; }
-        [DataMember]
-        public DateTime DataValidade { get => dataValidade; set => dataValidade = value; }
-        [DataMember]
+        [DataMember(IsRequired = true)]
         public string CodigoSeguranca { get => codigoSeguranca; set => codigoSeguranca = value; }
     }
 }

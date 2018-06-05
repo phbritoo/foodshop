@@ -7,11 +7,29 @@
       <xsd:import schemaLocation="http://localhost:61702/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_PegarTexto_InputMessage">
-    <wsdl:part name="parameters" element="tns:PegarTexto" />
+  <wsdl:message name="IService1_InsertCarrinho_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarrinho" />
   </wsdl:message>
-  <wsdl:message name="IService1_PegarTexto_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PegarTextoResponse" />
+  <wsdl:message name="IService1_InsertCarrinho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCarrinhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCarrinho_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarrinho" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCarrinho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarrinhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCarrinho_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarrinho" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCarrinho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarrinhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCarrinho_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCarrinho" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCarrinho_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCarrinhoResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_InsertCartao_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCartao" />
@@ -31,10 +49,130 @@
   <wsdl:message name="IService1_DeleteCartao_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCartaoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SelectCartao_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartao" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCartao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNotaFiscal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNotaFiscal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateNotaFiscal_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateNotaFiscal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteNotaFiscal_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteNotaFiscal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectNotaFiscal_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectNotaFiscal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectNotaFiscal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectNotaFiscalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProduto" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoginUsuarioLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUsuarioLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoginUsuarioLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUsuarioLoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="PegarTexto">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PegarTexto" message="tns:IService1_PegarTexto_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PegarTextoResponse" message="tns:IService1_PegarTexto_OutputMessage" />
+    <wsdl:operation name="InsertCarrinho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCarrinho" message="tns:IService1_InsertCarrinho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCarrinhoResponse" message="tns:IService1_InsertCarrinho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCarrinho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCarrinho" message="tns:IService1_UpdateCarrinho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCarrinhoResponse" message="tns:IService1_UpdateCarrinho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrinho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCarrinho" message="tns:IService1_DeleteCarrinho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCarrinhoResponse" message="tns:IService1_DeleteCarrinho_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCarrinho">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCarrinho" message="tns:IService1_SelectCarrinho_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCarrinhoResponse" message="tns:IService1_SelectCarrinho_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCartao">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCartao" message="tns:IService1_InsertCartao_InputMessage" />
@@ -48,11 +186,110 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCartao" message="tns:IService1_DeleteCartao_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCartaoResponse" message="tns:IService1_DeleteCartao_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SelectCartao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCartao" message="tns:IService1_SelectCartao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCartaoResponse" message="tns:IService1_SelectCartao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertLoja" message="tns:IService1_InsertLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertLojaResponse" message="tns:IService1_InsertLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateLoja" message="tns:IService1_UpdateLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateLojaResponse" message="tns:IService1_UpdateLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteLoja" message="tns:IService1_DeleteLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteLojaResponse" message="tns:IService1_DeleteLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectLoja" message="tns:IService1_SelectLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectLojaResponse" message="tns:IService1_SelectLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaFiscal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNotaFiscal" message="tns:IService1_InsertNotaFiscal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNotaFiscalResponse" message="tns:IService1_InsertNotaFiscal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaFiscal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateNotaFiscal" message="tns:IService1_UpdateNotaFiscal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateNotaFiscalResponse" message="tns:IService1_UpdateNotaFiscal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaFiscal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteNotaFiscal" message="tns:IService1_DeleteNotaFiscal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteNotaFiscalResponse" message="tns:IService1_DeleteNotaFiscal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectNotaFiscal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectNotaFiscal" message="tns:IService1_SelectNotaFiscal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectNotaFiscalResponse" message="tns:IService1_SelectNotaFiscal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertProduto" message="tns:IService1_InsertProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertProdutoResponse" message="tns:IService1_InsertProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProduto" message="tns:IService1_UpdateProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProdutoResponse" message="tns:IService1_UpdateProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteProduto" message="tns:IService1_DeleteProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteProdutoResponse" message="tns:IService1_DeleteProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectProduto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectProduto" message="tns:IService1_SelectProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectProdutoResponse" message="tns:IService1_SelectProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUsuario" message="tns:IService1_InsertUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUsuarioResponse" message="tns:IService1_InsertUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUsuario" message="tns:IService1_UpdateUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUsuarioResponse" message="tns:IService1_UpdateUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUsuario" message="tns:IService1_DeleteUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUsuarioResponse" message="tns:IService1_DeleteUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectUsuario" message="tns:IService1_SelectUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectUsuarioResponse" message="tns:IService1_SelectUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUsuarioLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLogin" message="tns:IService1_LoginUsuarioLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLoginResponse" message="tns:IService1_LoginUsuarioLogin_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="PegarTexto">
-      <soap:operation soapAction="http://tempuri.org/IService1/PegarTexto" style="document" />
+    <wsdl:operation name="InsertCarrinho">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertCarrinho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCarrinho">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCarrinho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCarrinho">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteCarrinho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCarrinho">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCarrinho" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -80,6 +317,168 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteCartao">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteCartao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCartao">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCartao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectNotaFiscal">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectNotaFiscal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectProduto">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectProduto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUsuarioLogin">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoginUsuarioLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

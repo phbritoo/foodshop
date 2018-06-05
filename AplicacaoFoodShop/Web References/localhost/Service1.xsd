@@ -1,22 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:61702/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" />
-  <xs:element name="PegarTexto">
+  <xs:element name="InsertCarrinho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="carrinho" nillable="true" type="q1:Carrinho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCarrinhoResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="PegarTextoResponse">
+  <xs:element name="UpdateCarrinho">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="PegarTextoResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="carrinho" nillable="true" type="q2:Carrinho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCarrinhoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCarrinho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="carrinho" nillable="true" type="q3:Carrinho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCarrinhoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCarrinho">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q4:Carrinho" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCarrinhoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectCarrinhoResult" nillable="true" type="q5:ArrayOfCarrinho" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertCartao">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q1:Cartao" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q6:Cartao" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -28,7 +66,7 @@
   <xs:element name="UpdateCartao">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q2:Cartao" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q7:Cartao" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -40,13 +78,242 @@
   <xs:element name="DeleteCartao">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q8:Cartao" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteCartaoResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCartao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="cartao" nillable="true" type="q9:Cartao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCartaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectCartaoResult" nillable="true" type="q10:ArrayOfCartao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="loja" nillable="true" type="q11:Loja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLojaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="loja" nillable="true" type="q12:Loja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLojaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="loja" nillable="true" type="q13:Loja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLojaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q14:Loja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectLojaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectLojaResult" nillable="true" type="q15:ArrayOfLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNotaFiscal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="notaFiscal" nillable="true" type="q16:NotaFiscal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNotaFiscalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateNotaFiscal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="notaFiscal" nillable="true" type="q17:NotaFiscal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateNotaFiscalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotaFiscal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="notaFiscal" nillable="true" type="q18:NotaFiscal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotaFiscalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectNotaFiscal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q19:NotaFiscal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectNotaFiscalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectNotaFiscalResult" nillable="true" type="q20:ArrayOfNotaFiscal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produto" nillable="true" type="q21:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProdutoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produto" nillable="true" type="q22:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProdutoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produto" nillable="true" type="q23:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProdutoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectProduto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produto" nillable="true" type="q24:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectProdutoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectProdutoResult" nillable="true" type="q25:ArrayOfProduto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="usuario" nillable="true" type="q26:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="usuario" nillable="true" type="q27:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="usuario" nillable="true" type="q28:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q29:Usuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectUsuarioResult" nillable="true" type="q30:ArrayOfUsuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUsuarioLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cpf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUsuarioLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="LoginUsuarioLoginResult" nillable="true" type="q31:Usuario" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

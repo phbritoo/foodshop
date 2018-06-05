@@ -43,7 +43,6 @@ C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\AplicacaoFoodShop.p
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\BibliotecaShopFood.dll
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\BibliotecaShopFood.pdb
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.csprojResolveAssemblyReference.cache
-C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Form1.resources
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Properties.Resources.resources
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.csproj.GenerateResource.cache
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.csproj.CoreCompileInputs.cache
@@ -54,3 +53,9 @@ C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\BibliotecaShopFood.
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.dll
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.pdb
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.dll.config
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Login.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Principal.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Usuario.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Loja.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Produto.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Cartao.resources

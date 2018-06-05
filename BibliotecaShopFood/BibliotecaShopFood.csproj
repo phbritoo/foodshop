@@ -65,6 +65,8 @@
     <Compile Include="Dados\ProdutoDAOImpl.cs" />
     <Compile Include="Dados\UsuarioDAO.cs" />
     <Compile Include="Dados\UsuarioDAOImpl.cs" />
+    <Compile Include="Dados\UsuarioLoginDAO.cs" />
+    <Compile Include="Dados\UsuarioLoginDAOImpl.cs" />
     <Compile Include="Gui\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +78,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\localhost\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -105,36 +102,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\localhost\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\localhost\Service1.wsdl" />
-    <None Include="Web References\localhost\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\localhost\Service10.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\localhost\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:61702/Service1.svc">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost:61702/Service1.svc</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>BibliotecaShopFood_localhost_Service1</CachedSettingsPropName>
-    </WebReferenceUrl>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Web References\localhost\Service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

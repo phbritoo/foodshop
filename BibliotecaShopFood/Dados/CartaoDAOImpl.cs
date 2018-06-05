@@ -31,22 +31,28 @@ namespace BibliotecaShopFood.Dados
             }
         }
 
-        
+
         public void Insert(Cartao cartao)
         {
-            try
-            {
-                this.abrirConexao();
-                sql = "insert into cartaocredito (numero, bandeira, datavalidade, codigoseguranca) values('" + cartao.Numero + "','" + cartao.Bandeira + "','" + cartao.DataValidade + "','" + cartao.CodigoSeguranca + "')";
-                executaSql();
+         
+                    try
+                     {
+                        
+                        this.abrirConexao();
+                        sql = "insert into cartaocredito (numero, bandeira, codigoseguranca) values('" + cartao.Numero + "','" + cartao.Bandeira + "','"+ cartao.CodigoSeguranca + "')";
+                        executaSql();
 
-            }
-            catch (Exception ex)
-            {
+                    }
+                    catch (Exception ex)
+                    {
 
-                throw new Exception("Erro ao conectar e inserir" + ex.Message);
-            }
-        }
+                        throw new Exception("Erro ao conectar e inserir" + ex.Message);
+                    }
+
+                }
+                
+          
+        
         
         public List<Cartao> Select(Cartao filtro)
         {
@@ -54,7 +60,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT numero, bandeira, datavalidade, codigoseguranca FROM cartaocredito where id = id";
+                string sql = "SELECT numero, bandeira, codigoseguranca FROM cartaocredito where id = id";
                 if (filtro.Numero != null )
                 {
                     sql += " and numero like '%" + filtro.Numero + "%'";
@@ -77,7 +83,6 @@ namespace BibliotecaShopFood.Dados
                      Cartao cartao = new Cartao();
                      cartao.Numero = DbReader.GetString(DbReader.GetOrdinal("numero"));
                      cartao.Bandeira = DbReader.GetString(DbReader.GetOrdinal("bandeira"));
-                     cartao.DataValidade = DbReader.GetDateTime(DbReader.GetOrdinal("datavalidade"));
                      cartao.CodigoSeguranca = DbReader.GetString(DbReader.GetOrdinal("codigoseguranca"));
                      retorno.Add(cartao);
                 }
@@ -100,7 +105,7 @@ namespace BibliotecaShopFood.Dados
             {
 
                 this.abrirConexao();
-                string sql = "update cartaocredito set numero ='" + cartao.Numero + "', bandeira = '" + cartao.Bandeira + "', datavalidade = '" + cartao.DataValidade + "', codigoseguranca = '" + cartao.CodigoSeguranca + " ' where numero = '" + cartao.Numero + "'";
+                string sql = "update cartaocredito set numero ='" + cartao.Numero + "', bandeira = '" + cartao.Bandeira + "', datavalidade = '" + "', codigoseguranca = '" + cartao.CodigoSeguranca + " ' where numero = '" + cartao.Numero + "'";
                 executaSql();
             }
             catch (Exception ex)
@@ -116,7 +121,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "select numero, bandeira, datavalidade, codigoseguranca from cartaocredito where numero = '" + cartao.Numero + "'";
+                string sql = "select numero, bandeira, codigoseguranca from cartaocredito where numero = '" + cartao.Numero + "'";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())

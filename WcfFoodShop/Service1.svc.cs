@@ -14,35 +14,357 @@ namespace WcfFoodShop
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public void DeleteCartao(String numero)
+        public void DeleteCarrinho(Carrinho carrinho)
         {
             try
             {
-                CartaoDAO c = new CartaoDAOImpl();
-                Cartao cartao = new Cartao();
-                cartao.Numero = numero;
-                c.Delete(cartao);
+                CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
+                carrinhodao.Delete(carrinho);
             }
-            catch (Exception)
+            catch (Exception ex )
             {
 
-                throw;
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
+            }
+        }
+
+        public void DeleteCartao(Cartao cartao)
+        {
+            try
+            {
+                CartaoDAO cartaodao = new CartaoDAOImpl();
+                cartaodao.Delete(cartao);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
             } 
+        }
+
+        public void DeleteLoja(Loja loja)
+        {
+            try
+            {
+                LojaDAO lojadao = new LojaDAOImpl();
+                lojadao.Delete(loja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
+            }
+        }
+
+        public void DeleteNotaFiscal(NotaFiscal notaFiscal)
+        {
+            try
+            {
+                NotaFiscalDAO notafiscaldao = new NotafiscalDAOImpl();
+                notafiscaldao.Delete(notaFiscal);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
+            }
+        }
+
+        public void DeleteProduto(Produto produto)
+        {
+            try
+            {
+                ProdutoDAO produtodao = new ProdutoDAOImpl();
+                produtodao.Delete(produto);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
+            }
+        }
+
+        public void DeleteUsuario(Usuario usuario)
+        {
+            try
+            {
+                UsuarioDAO usuariodao = new UsuarioDAOImpl();
+                usuariodao.Delete(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e remover" + ex.Message);
+            }
+        }
+
+        public void InsertCarrinho(Carrinho carrinho)
+        {
+            try
+            {
+                CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
+                carrinhodao.Insert(carrinho);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
         }
 
         public void InsertCartao(Cartao cartao)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CartaoDAO cartaodao = new CartaoDAOImpl();
+                cartaodao.Insert(cartao);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+           
         }
 
-        public string PegarTexto()
+        public void InsertLoja(Loja loja)
         {
-            return "Testando o wcf";
+            try
+            {
+                LojaDAO lojadao = new LojaDAOImpl();
+                lojadao.Insert(loja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+        }
+
+        public void InsertNotaFiscal(NotaFiscal notaFiscal)
+        {
+            try
+            {
+                NotaFiscalDAO notafiscaldao = new NotafiscalDAOImpl();
+                notafiscaldao.Insert(notaFiscal);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+        }
+
+        public void InsertProduto(Produto produto)
+        {
+            try
+            {
+                ProdutoDAO produtodao = new ProdutoDAOImpl();
+                produtodao.Insert(produto);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+        }
+
+        public void InsertUsuario(Usuario usuario)
+        {
+            try
+            {
+                UsuarioDAO usuariodao = new UsuarioDAOImpl();
+                usuariodao.Insert(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+        }
+
+        public List<Carrinho> SelectCarrinho(Carrinho filtro)
+        {
+            try
+            {
+                CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
+                return carrinhodao.Select(filtro);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            }
+        }
+
+        public List<Cartao> SelectCartao(Cartao cartao)
+        {
+            try
+            {
+                CartaoDAO cartaodao = new CartaoDAOImpl();
+                return cartaodao.Select(cartao);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            }
+        }
+
+        public List<Loja> SelectLoja(Loja filtro)
+        {
+            try
+            {
+                LojaDAO lojadao = new LojaDAOImpl();
+                return lojadao.Select(filtro);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            };
+        }
+
+        public List<NotaFiscal> SelectNotaFiscal(NotaFiscal filtro)
+        {
+            try
+            {
+                NotaFiscalDAO notafiscaldao = new NotafiscalDAOImpl();
+                return notafiscaldao.Select(filtro);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            }
+        }
+
+        public List<Produto> SelectProduto(Produto produto)
+        {
+            try
+            {
+                ProdutoDAO produtodao = new ProdutoDAOImpl();
+                return produtodao.Select(produto);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            }
+        }
+
+        public List<Usuario> SelectUsuario(Usuario filtro)
+        {
+            try
+            {
+                UsuarioDAO usuariodao = new UsuarioDAOImpl();
+                return usuariodao.Select(filtro);
+            }
+            catch (Exception ex )
+            {
+
+                throw new Exception("Erro ao conectar e selecionar" + ex.Message);
+            }
+        }
+
+        public void UpdateCarrinho(Carrinho carrinho)
+        {
+            try
+            {
+                CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
+                carrinhodao.Update(carrinho);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
         }
 
         public void UpdateCartao(Cartao cartao)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CartaoDAO cartadao = new CartaoDAOImpl();
+                cartadao.Select(cartao);
+            }
+            catch (Exception ex )
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
+        }
+
+        public void UpdateLoja(Loja loja)
+        {
+            try
+            {
+                LojaDAO lojadao = new LojaDAOImpl();
+                lojadao.Update(loja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
+        }
+
+        public void UpdateNotaFiscal(NotaFiscal notaFiscal)
+        {
+            try
+            {
+                NotaFiscalDAO notafiscaldao = new NotafiscalDAOImpl();
+                notafiscaldao.Update(notaFiscal);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
+        }
+
+        public void UpdateProduto(Produto produto)
+        {
+            try
+            {
+                ProdutoDAO produtodao = new ProdutoDAOImpl();
+                produtodao.Update(produto);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
+        }
+
+        public void UpdateUsuario(Usuario usuario)
+        {
+            try
+            {
+                UsuarioDAO usuariodao = new UsuarioDAOImpl();
+                usuariodao.Update(usuario);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao conectar e atualizar" + ex.Message);
+            }
+        }
+
+        public Usuario LoginUsuarioLogin(string cpf, string senha)
+        {
+            try
+            {
+                UsuarioLoginDAO usuariologindao = new UsuarioLoginDAOImpl();
+                return usuariologindao.UsuarioLogin(cpf, senha);
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro no processo de login" + ex.Message);
+            }
         }
     }
 }

@@ -29,10 +29,10 @@ namespace BibliotecaShopFood.Dados
 
         public void Insert(Usuario usuario)
         {
-            try
+           try
             {
                 this.abrirConexao();
-                sql = "insert into usuario (cpf, nome, datanascimeto, endereco, telefone, isadm) values('" + usuario.Cpf + "','" + usuario.Nome + "','" + usuario.DataNascimento + "','" + usuario.Telefone + "','" + usuario.IsAdm + "')";
+                sql = "insert into usuario (cpf, nome, endereco, telefone, senha) values('" + usuario.Cpf + "','" + usuario.Nome + "','"  + usuario.Endereco + "','" + usuario.Telefone + "','"  + usuario.Senha + "')";
                 executaSql();
 
             }
@@ -41,6 +41,8 @@ namespace BibliotecaShopFood.Dados
 
                 throw new Exception("Erro ao conectar e inserir" + ex.Message);
             }
+                
+            
         }
 
         public List<Usuario> Select(Usuario filtro)
@@ -49,7 +51,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT cpf, nome, datanascimento, endereco, telefone, isadm FROM usuario where id = id";
+                string sql = "SELECT cpf, nome, endereco, telefone FROM usuario where id = id";
                 if (filtro.Cpf != null)
                 {
                     sql += " and cpf like '%" + filtro.Cpf + "%'";
@@ -78,10 +80,8 @@ namespace BibliotecaShopFood.Dados
                     Usuario usuario = new Usuario();
                     usuario.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                     usuario.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
-                    usuario.DataNascimento = DbReader.GetDateTime(DbReader.GetOrdinal("datanascimento"));
                     usuario.Endereco = DbReader.GetString(DbReader.GetOrdinal("endereco"));
                     usuario.Telefone = DbReader.GetString(DbReader.GetOrdinal("telefone"));
-                    usuario.IsAdm = DbReader.GetString(DbReader.GetOrdinal("isadm"));
                     retorno.Add(usuario);
                 }
                 DbReader.Close();
@@ -102,7 +102,7 @@ namespace BibliotecaShopFood.Dados
             {
 
                 this.abrirConexao();
-                string sql = "update produto set cpf ='" + usuario.Cpf + "', nome = '" + usuario.Nome + "', datanascimento = '" + usuario.DataNascimento + "', endereco = '" + usuario.Endereco + "', telefone = '" + usuario.Telefone + "', isadm = '" + usuario.IsAdm + "' where cpf = '" + usuario.Cpf + "'";
+                string sql = "update produto set cpf ='" + usuario.Cpf + "', nome = '" + usuario.Nome + "', endereco = '" + usuario.Endereco + "', telefone = '" + usuario.Telefone + "' where cpf = '" + usuario.Cpf + "'";
                 executaSql();
             }
             catch (Exception ex)
