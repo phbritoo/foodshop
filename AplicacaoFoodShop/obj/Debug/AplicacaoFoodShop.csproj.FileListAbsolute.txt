@@ -50,3 +50,7 @@ C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.c
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.csproj.CopyComplete
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.exe
 C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.pdb
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\BibliotecaShopFood.dll.config
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.dll
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.pdb
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\bin\Debug\WcfFoodShop.dll.config

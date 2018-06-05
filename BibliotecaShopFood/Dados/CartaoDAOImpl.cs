@@ -7,12 +7,15 @@ using BibliotecaShopFood.ClassesBasicas;
 using BibliotecaShopFood.Conexao;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.Serialization;
 
 
 namespace BibliotecaShopFood.Dados
+
 {
     public class CartaoDAOImpl : ConexaoBdSql, CartaoDAO
     {
+       
         public void Delete(Cartao cartao)
         {
             try
@@ -27,8 +30,8 @@ namespace BibliotecaShopFood.Dados
                 throw new Exception("Erro ao conectar e remover" + ex.Message);
             }
         }
-    
 
+        
         public void Insert(Cartao cartao)
         {
             try
@@ -44,7 +47,7 @@ namespace BibliotecaShopFood.Dados
                 throw new Exception("Erro ao conectar e inserir" + ex.Message);
             }
         }
-
+        
         public List<Cartao> Select(Cartao filtro)
         {
             List<Cartao> retorno = new List<Cartao>();
@@ -90,7 +93,7 @@ namespace BibliotecaShopFood.Dados
             return retorno;
 
         }
-
+        
         public void Update(Cartao cartao)
         {
             try
@@ -106,7 +109,7 @@ namespace BibliotecaShopFood.Dados
                 throw new Exception("Erro ao conectar e modifcar" + ex.Message);
             }
         }
-
+        
         public bool VerificaDuplicidade(Cartao cartao)
         {
             bool retorno = false;

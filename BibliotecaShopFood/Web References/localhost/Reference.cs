@@ -31,6 +31,12 @@ namespace BibliotecaShopFood.localhost {
         
         private System.Threading.SendOrPostCallback PegarTextoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InsertCartaoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateCartaoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteCartaoOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -73,6 +79,15 @@ namespace BibliotecaShopFood.localhost {
         public event PegarTextoCompletedEventHandler PegarTextoCompleted;
         
         /// <remarks/>
+        public event InsertCartaoCompletedEventHandler InsertCartaoCompleted;
+        
+        /// <remarks/>
+        public event UpdateCartaoCompletedEventHandler UpdateCartaoCompleted;
+        
+        /// <remarks/>
+        public event DeleteCartaoCompletedEventHandler DeleteCartaoCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/PegarTexto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string PegarTexto() {
@@ -101,6 +116,90 @@ namespace BibliotecaShopFood.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertCartao", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InsertCartao([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Cartao cartao) {
+            this.Invoke("InsertCartao", new object[] {
+                        cartao});
+        }
+        
+        /// <remarks/>
+        public void InsertCartaoAsync(Cartao cartao) {
+            this.InsertCartaoAsync(cartao, null);
+        }
+        
+        /// <remarks/>
+        public void InsertCartaoAsync(Cartao cartao, object userState) {
+            if ((this.InsertCartaoOperationCompleted == null)) {
+                this.InsertCartaoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertCartaoOperationCompleted);
+            }
+            this.InvokeAsync("InsertCartao", new object[] {
+                        cartao}, this.InsertCartaoOperationCompleted, userState);
+        }
+        
+        private void OnInsertCartaoOperationCompleted(object arg) {
+            if ((this.InsertCartaoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertCartaoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/UpdateCartao", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateCartao([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Cartao cartao) {
+            this.Invoke("UpdateCartao", new object[] {
+                        cartao});
+        }
+        
+        /// <remarks/>
+        public void UpdateCartaoAsync(Cartao cartao) {
+            this.UpdateCartaoAsync(cartao, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateCartaoAsync(Cartao cartao, object userState) {
+            if ((this.UpdateCartaoOperationCompleted == null)) {
+                this.UpdateCartaoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateCartaoOperationCompleted);
+            }
+            this.InvokeAsync("UpdateCartao", new object[] {
+                        cartao}, this.UpdateCartaoOperationCompleted, userState);
+        }
+        
+        private void OnUpdateCartaoOperationCompleted(object arg) {
+            if ((this.UpdateCartaoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateCartaoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeleteCartao", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteCartao([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Cartao cartao) {
+            this.Invoke("DeleteCartao", new object[] {
+                        cartao});
+        }
+        
+        /// <remarks/>
+        public void DeleteCartaoAsync(Cartao cartao) {
+            this.DeleteCartaoAsync(cartao, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteCartaoAsync(Cartao cartao, object userState) {
+            if ((this.DeleteCartaoOperationCompleted == null)) {
+                this.DeleteCartaoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteCartaoOperationCompleted);
+            }
+            this.InvokeAsync("DeleteCartao", new object[] {
+                        cartao}, this.DeleteCartaoOperationCompleted, userState);
+        }
+        
+        private void OnDeleteCartaoOperationCompleted(object arg) {
+            if ((this.DeleteCartaoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteCartaoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -116,6 +215,104 @@ namespace BibliotecaShopFood.localhost {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas")]
+    public partial class Cartao {
+        
+        private string bandeiraField;
+        
+        private string codigoSegurancaField;
+        
+        private System.DateTime dataValidadeField;
+        
+        private bool dataValidadeFieldSpecified;
+        
+        private int idField;
+        
+        private bool idFieldSpecified;
+        
+        private string numeroField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Bandeira {
+            get {
+                return this.bandeiraField;
+            }
+            set {
+                this.bandeiraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string CodigoSeguranca {
+            get {
+                return this.codigoSegurancaField;
+            }
+            set {
+                this.codigoSegurancaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime DataValidade {
+            get {
+                return this.dataValidadeField;
+            }
+            set {
+                this.dataValidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DataValidadeSpecified {
+            get {
+                return this.dataValidadeFieldSpecified;
+            }
+            set {
+                this.dataValidadeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IdSpecified {
+            get {
+                return this.idFieldSpecified;
+            }
+            set {
+                this.idFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
         }
     }
     
@@ -144,6 +341,18 @@ namespace BibliotecaShopFood.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void InsertCartaoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void UpdateCartaoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void DeleteCartaoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

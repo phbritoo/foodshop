@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BibliotecaShopFood.ClassesBasicas;
+using System.Runtime.Serialization;
 namespace BibliotecaShopFood.Dados
 {
+    
     public interface CartaoDAO
     {
         void Insert(Cartao cartao);

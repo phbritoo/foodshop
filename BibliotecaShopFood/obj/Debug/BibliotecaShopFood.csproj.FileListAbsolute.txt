@@ -30,3 +30,4 @@ C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.pdb
+C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll.config

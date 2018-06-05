@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaShopFood.ClassesBasicas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -16,8 +17,15 @@ namespace WcfFoodShop
         [OperationContract]
         string PegarTexto();
 
+        [OperationContract]
+        void InsertCartao(Cartao cartao);
+        [OperationContract]
+        void UpdateCartao(Cartao cartao);
+        [OperationContract]
+        void DeleteCartao(String numero);
 
-       
+
+
     }
 
 }

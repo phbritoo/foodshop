@@ -5,3 +5,7 @@ C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csprojResolve
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CoreCompileInputs.cache
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.dll
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.pdb
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.pdb
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll.config
+C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CopyComplete

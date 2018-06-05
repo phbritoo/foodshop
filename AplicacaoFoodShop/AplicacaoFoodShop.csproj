@@ -92,15 +92,12 @@
     <None Include="Web References\localhost\Service10.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web References\localhost\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BibliotecaShopFood\BibliotecaShopFood.csproj">
-      <Project>{6a3cb931-c797-4a3a-b9a1-ff6daf728813}</Project>
-      <Name>BibliotecaShopFood</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CrudTest\" />
@@ -126,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\localhost\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfFoodShop\WcfFoodShop.csproj">
+      <Project>{bac34138-3117-42d7-9b29-08d864521ee0}</Project>
+      <Name>WcfFoodShop</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
