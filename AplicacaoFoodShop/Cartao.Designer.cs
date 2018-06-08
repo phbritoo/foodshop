@@ -36,11 +36,12 @@
             this.textBoxBandeira = new System.Windows.Forms.TextBox();
             this.textBoxCodigoSeguranca = new System.Windows.Forms.TextBox();
             this.listViewCartao = new System.Windows.Forms.ListView();
-            this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.buttonListar = new System.Windows.Forms.Button();
             this.Número = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Bandeira = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CódigoSegurança = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.buttonListar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -107,6 +108,21 @@
             this.listViewCartao.UseCompatibleStateImageBehavior = false;
             this.listViewCartao.View = System.Windows.Forms.View.Details;
             // 
+            // Número
+            // 
+            this.Número.Text = "Numero";
+            this.Número.Width = 133;
+            // 
+            // Bandeira
+            // 
+            this.Bandeira.Text = "Bandeira";
+            this.Bandeira.Width = 118;
+            // 
+            // CódigoSegurança
+            // 
+            this.CódigoSegurança.Text = "CódigoSeguranca";
+            this.CódigoSegurança.Width = 86;
+            // 
             // buttonCadastrar
             // 
             this.buttonCadastrar.Location = new System.Drawing.Point(171, 150);
@@ -127,20 +143,15 @@
             this.buttonListar.UseVisualStyleBackColor = true;
             this.buttonListar.Click += new System.EventHandler(this.buttonListar_Click);
             // 
-            // Número
+            // button1
             // 
-            this.Número.Text = "Numero";
-            this.Número.Width = 133;
-            // 
-            // Bandeira
-            // 
-            this.Bandeira.Text = "Bandeira";
-            this.Bandeira.Width = 118;
-            // 
-            // CódigoSegurança
-            // 
-            this.CódigoSegurança.Text = "CódigoSeguranca";
-            this.CódigoSegurança.Width = 86;
+            this.button1.Location = new System.Drawing.Point(676, 303);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "voltar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Cartao
             // 
@@ -149,6 +160,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonListar);
             this.Controls.Add(this.buttonCadastrar);
             this.Controls.Add(this.listViewCartao);
@@ -179,5 +191,6 @@
         private System.Windows.Forms.ColumnHeader Número;
         private System.Windows.Forms.ColumnHeader Bandeira;
         private System.Windows.Forms.ColumnHeader CódigoSegurança;
+        private System.Windows.Forms.Button button1;
     }
 }

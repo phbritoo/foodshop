@@ -51,6 +51,7 @@
     <Compile Include="ClassesBasicas\Loja.cs" />
     <Compile Include="ClassesBasicas\NotaFiscal.cs" />
     <Compile Include="ClassesBasicas\Produto.cs" />
+    <Compile Include="ClassesBasicas\ProdutoLoja.cs" />
     <Compile Include="ClassesBasicas\Usuario.cs" />
     <Compile Include="Conexao\ConexaoBdSql.cs" />
     <Compile Include="Dados\CarrinhoDAO.cs" />
@@ -63,6 +64,8 @@
     <Compile Include="Dados\ProdutoDAO.cs" />
     <Compile Include="Dados\NotaFiscalDAOImpl.cs" />
     <Compile Include="Dados\ProdutoDAOImpl.cs" />
+    <Compile Include="Dados\ProdutoLojaDAO.cs" />
+    <Compile Include="Dados\ProdutoLojaDAOImpl.cs" />
     <Compile Include="Dados\UsuarioDAO.cs" />
     <Compile Include="Dados\UsuarioDAOImpl.cs" />
     <Compile Include="Dados\UsuarioLoginDAO.cs" />
@@ -74,6 +77,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -88,6 +96,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Gui\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

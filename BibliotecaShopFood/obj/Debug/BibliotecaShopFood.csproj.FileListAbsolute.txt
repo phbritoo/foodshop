@@ -31,3 +31,13 @@ C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.pdb
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll.config
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll.config
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.dll
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\bin\Debug\BibliotecaShopFood.pdb
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csprojAssemblyReference.cache
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.Gui.Form1.resources
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.GenerateResource.cache
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.CoreCompileInputs.cache
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.dll
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.Properties.Resources.resources

@@ -366,5 +366,25 @@ namespace WcfFoodShop
                 throw new Exception("Erro no processo de login" + ex.Message);
             }
         }
+
+        public void Insert(ProdutoLoja produtoLoja)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(ProdutoLoja produtoLoja)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(ProdutoLoja produtoLoja)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProdutoLoja> List(ProdutoLoja filtro)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,3 +9,14 @@ C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.pdb
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll.config
 C:\Users\Camilo\Desktop\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CopyComplete
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\WcfFoodShop.dll.config
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\WcfFoodShop.dll
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\WcfFoodShop.pdb
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\BibliotecaShopFood.pdb
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll.config
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csprojAssemblyReference.cache
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CoreCompileInputs.cache
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CopyComplete
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.dll
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.pdb

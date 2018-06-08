@@ -71,6 +71,12 @@ namespace WcfFoodShop
         Usuario LoginUsuarioLogin(string cpf, string senha);
 
 
+        [OperationContract]
+        void Insert(ProdutoLoja produtoLoja);
+        void Update(ProdutoLoja produtoLoja);
+        void Delete(ProdutoLoja produtoLoja);
+        List<ProdutoLoja> List(ProdutoLoja filtro);
+
 
 
 

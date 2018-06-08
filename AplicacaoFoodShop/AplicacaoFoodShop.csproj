@@ -89,6 +89,12 @@
     <Compile Include="Produto.Designer.cs">
       <DependentUpon>Produto.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProdutoLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoLoja.Designer.cs">
+      <DependentUpon>ProdutoLoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs">
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produto.resx">
       <DependentUpon>Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoLoja.resx">
+      <DependentUpon>ProdutoLoja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

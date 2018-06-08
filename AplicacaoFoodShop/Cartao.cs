@@ -32,7 +32,7 @@ namespace AplicacaoFoodShop
             catch (Exception ex)
             {
 
-                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+                MessageBox.Show("Erro ao conectar e inserir" + ex.Message);
             }
         }
 
@@ -57,6 +57,13 @@ namespace AplicacaoFoodShop
 
                 throw new Exception("Erro ao conectar e Listar" + ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Principal principal = new Principal();
+            principal.Show();
         }
     }
 }

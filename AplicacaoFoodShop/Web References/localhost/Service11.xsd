@@ -12,7 +12,6 @@
     <xs:sequence>
       <xs:element name="Bandeira" nillable="true" type="xs:string" />
       <xs:element name="CodigoSeguranca" nillable="true" type="xs:string" />
-      <xs:element name="Id" type="xs:int" />
       <xs:element name="Numero" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -21,8 +20,7 @@
     <xs:sequence>
       <xs:element name="Cpf" nillable="true" type="xs:string" />
       <xs:element name="Endereco" nillable="true" type="xs:string" />
-      <xs:element name="Id" type="xs:int" />
-      <xs:element name="IsAdm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element name="Nome" nillable="true" type="xs:string" />
       <xs:element name="Senha" nillable="true" type="xs:string" />
       <xs:element name="Telefone" nillable="true" type="xs:string" />

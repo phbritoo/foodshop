@@ -64,5 +64,11 @@ namespace AplicacaoFoodShop
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Principal principal = new Principal();
+            principal.Show();
+        }
     }
 }
