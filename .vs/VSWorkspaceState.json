@@ -1,7 +1,21 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WcfService1"
+    "\\AplicacaoFoodShop",
+    "\\AplicacaoFoodShop\\bin",
+    "\\AplicacaoFoodShop\\bin\\Debug",
+    "\\AplicacaoFoodShop\\bin\\Release",
+    "\\AplicacaoFoodShop\\obj",
+    "\\AplicacaoFoodShop\\obj\\Release",
+    "\\BibliotecaShopFood",
+    "\\BibliotecaShopFood\\bin",
+    "\\BibliotecaShopFood\\bin\\Debug",
+    "\\BibliotecaShopFood\\Dados",
+    "\\BibliotecaShopFood\\Gui",
+    "\\BibliotecaShopFood\\obj",
+    "\\BibliotecaShopFood\\obj\\Debug",
+    "\\BibliotecaShopFood\\Properties"
   ],
+  "SelectedNode": "\\AplicacaoFoodShop\\Web References\\localhost\\NotaFiscal.datasource",
   "PreviewInSolutionExplorer": false
 }

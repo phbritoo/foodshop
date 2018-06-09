@@ -108,6 +108,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Carrinho.resx">
+      <DependentUpon>Carrinho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cartao.resx">
       <DependentUpon>Cartao.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Loja.resx">
       <DependentUpon>Loja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaFiscal.resx">
+      <DependentUpon>NotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -134,6 +140,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
@@ -213,6 +220,9 @@
       <Project>{bac34138-3117-42d7-9b29-08d864521ee0}</Project>
       <Name>WcfFoodShop</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telafundo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
