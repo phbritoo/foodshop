@@ -51,3 +51,4 @@ C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFoo
 C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.CoreCompileInputs.cache
 C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.dll
 C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csprojAssemblyReference.cache
