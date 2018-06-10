@@ -22,12 +22,20 @@ namespace AplicacaoFoodShop
             try
             {
                 localhost.Loja loja = new localhost.Loja();
-                loja.Cnpj = Convert.ToInt32(textBoxCNPJ.Text);
+                loja.Cnpj = textBoxCNPJ.Text;
                 loja.RazaoSocial = textBoxRazaoSocial.Text;
                 loja.NomeFantasia = textBoxFantasia.Text;
                 localhost.Service1 sv = new localhost.Service1();
-                sv.InsertLoja(loja);
-                MessageBox.Show("Loja Cadastrada com Sucesso!");
+                String retornoMsg = sv.InsertLoja(loja);
+
+                if (retornoMsg == null || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Loja Cadastrada com Sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }
             }
             catch (Exception ex)
             {

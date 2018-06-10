@@ -157,6 +157,12 @@
   <wsdl:message name="IService1_LoginUsuarioLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUsuarioLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="InsertCarrinho">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCarrinho" message="tns:IService1_InsertCarrinho_InputMessage" />
@@ -257,6 +263,10 @@
     <wsdl:operation name="LoginUsuarioLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLogin" message="tns:IService1_LoginUsuarioLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLoginResponse" message="tns:IService1_LoginUsuarioLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insert" message="tns:IService1_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertResponse" message="tns:IService1_Insert_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -479,6 +489,15 @@
     </wsdl:operation>
     <wsdl:operation name="LoginUsuarioLogin">
       <soap:operation soapAction="http://tempuri.org/IService1/LoginUsuarioLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/IService1/Insert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

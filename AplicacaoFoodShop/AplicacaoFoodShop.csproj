@@ -200,6 +200,15 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WcfFoodShop\WcfFoodShop.csproj">
+      <Project>{bac34138-3117-42d7-9b29-08d864521ee0}</Project>
+      <Name>WcfFoodShop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telafundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <WebReferenceUrl Include="http://localhost:61702/Service1.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\localhost\</RelPath>
@@ -214,15 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\localhost\Service1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WcfFoodShop\WcfFoodShop.csproj">
-      <Project>{bac34138-3117-42d7-9b29-08d864521ee0}</Project>
-      <Name>WcfFoodShop</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\telafundo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

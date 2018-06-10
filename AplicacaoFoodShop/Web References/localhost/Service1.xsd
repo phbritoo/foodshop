@@ -60,7 +60,9 @@
   </xs:element>
   <xs:element name="InsertCartaoResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCartaoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateCartao">
@@ -110,7 +112,9 @@
   </xs:element>
   <xs:element name="InsertLojaResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertLojaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateLoja">
@@ -314,6 +318,18 @@
       <xs:sequence>
         <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="LoginUsuarioLoginResult" nillable="true" type="q31:Usuario" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produtoLoja" nillable="true" type="q32:ProdutoLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

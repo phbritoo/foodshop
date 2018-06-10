@@ -26,14 +26,26 @@ namespace AplicacaoFoodShop
                 cartao.Bandeira = textBoxBandeira.Text;
                 cartao.CodigoSeguranca = textBoxCodigoSeguranca.Text;
                 localhost.Service1 sv = new localhost.Service1();
-                sv.InsertCartao(cartao);
-                MessageBox.Show("Cartão Cadastrado com Sucesso!");
+
+                String retornoMsg = sv.InsertCartao(cartao);
+
+                if (retornoMsg == null || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Cartão Cadastrado com Sucesso!");
+
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }
             }
+
             catch (Exception ex)
             {
 
                 MessageBox.Show("Erro ao conectar e inserir" + ex.Message);
             }
+
         }
 
         private void buttonListar_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace WcfFoodShop
         List<Carrinho> SelectCarrinho(Carrinho filtro);
 
         [OperationContract]
-        void InsertCartao(Cartao cartao);
+        String InsertCartao(Cartao cartao);
         [OperationContract]
         void UpdateCartao(Cartao cartao);
         [OperationContract]
@@ -32,7 +32,7 @@ namespace WcfFoodShop
         List<Cartao> SelectCartao(Cartao cartao);
 
         [OperationContract]
-        void InsertLoja(Loja loja);
+        String InsertLoja(Loja loja);
         [OperationContract]
         void UpdateLoja(Loja loja);
         [OperationContract]

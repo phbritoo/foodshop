@@ -41,3 +41,4 @@ C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\B
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.dll
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.Properties.Resources.resources
+C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.Properties.Resources.resources

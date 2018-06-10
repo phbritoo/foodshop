@@ -7,7 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using BibliotecaShopFood.ClassesBasicas;
 using BibliotecaShopFood.Dados;
-
+using BibliotecaShopFood.RegraNegocio;
 namespace WcfFoodShop
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
@@ -113,12 +113,12 @@ namespace WcfFoodShop
             }
         }
 
-        public void InsertCartao(Cartao cartao)
+        public String InsertCartao(Cartao cartao)
         {
             try
             {
-                CartaoDAO cartaodao = new CartaoDAOImpl();
-                cartaodao.Insert(cartao);
+                RegraCartao cartaoRegra = new RegraCartaoImpl();
+                return cartaoRegra.Insert(cartao);
             }
             catch (Exception ex)
             {
@@ -128,12 +128,12 @@ namespace WcfFoodShop
            
         }
 
-        public void InsertLoja(Loja loja)
+        public String InsertLoja(Loja loja)
         {
             try
             {
-                LojaDAO lojadao = new LojaDAOImpl();
-                lojadao.Insert(loja);
+                RegraLoja lojaRegra = new RegraLojaImpl();
+                return lojaRegra.Insert(loja);
             }
             catch (Exception ex)
             {
@@ -216,14 +216,14 @@ namespace WcfFoodShop
         {
             try
             {
-                LojaDAO lojadao = new LojaDAOImpl();
-                return lojadao.Select(filtro);
+                RegraLoja lojaRegra = new RegraLojaImpl();
+                return lojaRegra.Select(filtro);
             }
             catch (Exception ex)
             {
 
                 throw new Exception("Erro ao conectar e selecionar" + ex.Message);
-            };
+            }
         }
 
         public List<NotaFiscal> SelectNotaFiscal(NotaFiscal filtro)

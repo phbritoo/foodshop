@@ -77,7 +77,7 @@ namespace BibliotecaShopFood.Dados
                     produto.Marca = DbReader.GetString(DbReader.GetOrdinal("produto.marca"));
                     produtoLoja.Produto = produto;
                     Loja loja = new Loja();
-                    loja.Cnpj = DbReader.GetInt32(DbReader.GetOrdinal("cnpj"));
+                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("cnpj"));
                     loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
                     loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
                     produtoLoja.Loja = loja;

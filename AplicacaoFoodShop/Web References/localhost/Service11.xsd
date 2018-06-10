@@ -41,7 +41,8 @@
   <xs:element name="ArrayOfCartao" nillable="true" type="tns:ArrayOfCartao" />
   <xs:complexType name="Loja">
     <xs:sequence>
-      <xs:element name="Cnpj" type="xs:int" />
+      <xs:element name="Cnpj" nillable="true" type="xs:string" />
+      <xs:element name="Id" type="xs:int" />
       <xs:element name="NomeFantasia" nillable="true" type="xs:string" />
       <xs:element name="RazaoSocial" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -91,4 +92,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
+  <xs:complexType name="ProdutoLoja">
+    <xs:sequence>
+      <xs:element name="Loja" nillable="true" type="tns:Loja" />
+      <xs:element name="Preco" type="xs:float" />
+      <xs:element name="Produto" nillable="true" type="tns:Produto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProdutoLoja" nillable="true" type="tns:ProdutoLoja" />
 </xs:schema>

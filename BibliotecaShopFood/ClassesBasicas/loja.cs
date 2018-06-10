@@ -10,12 +10,15 @@ namespace BibliotecaShopFood.ClassesBasicas
     [DataContract]
     public class Loja
     {
-
-        private int cnpj;
+        private int id;
+        private String cnpj;
         private String razaoSocial;
         private String nomeFantasia;
+
         [DataMember(IsRequired = true)]
-        public int Cnpj { get => cnpj; set => cnpj = value; }
+        public int Id { get => id; set => id = value; }
+        [DataMember(IsRequired = true)]
+        public string Cnpj { get => cnpj; set => cnpj = value; }
         [DataMember(IsRequired = true)]
         public string RazaoSocial { get => razaoSocial; set => razaoSocial = value; }
         [DataMember(IsRequired = true)]

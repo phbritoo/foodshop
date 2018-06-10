@@ -24,7 +24,7 @@ namespace BibliotecaShopFood.Gui
             try
             {
                 Loja loja = new Loja();
-                loja.Cnpj = Convert.ToInt32(textBox1.Text);
+                loja.Cnpj = textBox1.Text;
                 loja.NomeFantasia = textBox2.Text;
                 loja.RazaoSocial = textBox3.Text;
                 LojaDAOImpl lojadao = new LojaDAOImpl();

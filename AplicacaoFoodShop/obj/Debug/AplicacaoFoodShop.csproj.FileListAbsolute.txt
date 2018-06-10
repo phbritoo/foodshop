@@ -82,3 +82,6 @@ C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\Ap
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.exe
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.pdb
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.ProdutoLoja.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Carrinho.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.NotaFiscal.resources
+C:\Users\Camilo\Desktop\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.ProdutoLoja.resources

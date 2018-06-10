@@ -51,6 +51,10 @@ namespace BibliotecaShopFood.RegraNegocio
                         {
                             msgRetorno = msgRetorno + " Favor inserir a Razão Social \n";
                         }
+                        if (loja.Cnpj.Length != 11)
+                        {
+                            msgRetorno = msgRetorno + "O CNPJ deve possuir 11 dígitos";
+                        }
 
                     }
                     if (msgRetorno == "")
@@ -73,7 +77,8 @@ namespace BibliotecaShopFood.RegraNegocio
 
         public List<Loja> Select(Loja filtro)
         {
-            throw new NotImplementedException();
+            LojaDAO lojadao = new LojaDAOImpl();
+            return lojadao.Select(filtro);
         }
 
         public void Update(Loja loja)

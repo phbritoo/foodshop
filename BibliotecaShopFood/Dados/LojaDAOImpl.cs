@@ -34,9 +34,9 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "insert into loja (CNPJ, RAZAOSOCIAL, NOMEFANTASIA) values(" + loja.Cnpj + ",'"+loja.RazaoSocial+"','"+loja.NomeFantasia+"')" ;
+                sql = "insert into loja (CNPJ, RAZAOSOCIAL, NOMEFANTASIA) values('" + loja.Cnpj + "','" + loja.RazaoSocial + "','" + loja.NomeFantasia + "')";
                 executaSql();
-                
+
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace BibliotecaShopFood.Dados
             {
                 this.abrirConexao();
                 string sql = "SELECT CNPJ, RAZAOSOCIAL, NOMEFANTASIA FROM loja where cnpj = cnpj";
-                if (filtro.Cnpj > 0)
+                if (filtro.Cnpj != null)
                 {
                     sql += " and cnpj = " + filtro.Cnpj;
                 }
@@ -66,13 +66,13 @@ namespace BibliotecaShopFood.Dados
                     sql += " and nomefantasia like '%" + filtro.NomeFantasia + "%'";
                 }
 
-                
+
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
                 {
                     Loja loja = new Loja();
-                    loja.Cnpj = DbReader.GetInt32(DbReader.GetOrdinal("cnpj"));
+                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("cnpj"));
                     loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
                     loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
                     retorno.Add(loja);
@@ -80,14 +80,14 @@ namespace BibliotecaShopFood.Dados
                 DbReader.Close();
                 cmd.Dispose();
                 this.fecharConexao();
-                             
+
             }
             catch (Exception ex)
             {
                 throw new Exception("Erro ao conectar e selecionar" + ex.Message);
             }
             return retorno;
-            
+
         }
 
         public void Update(Loja loja)
@@ -96,7 +96,7 @@ namespace BibliotecaShopFood.Dados
             {
 
                 this.abrirConexao();
-                string sql = "update loja set cnpj =" + loja.Cnpj + ",razaosocial = '" + loja.RazaoSocial + "', nomefantasia = '" + loja.NomeFantasia + " ' where cnpj = " + loja.Cnpj;
+                string sql = "update loja set cnpj = '" + loja.Cnpj + "',razaosocial = '" + loja.RazaoSocial + "', nomefantasia = '" + loja.NomeFantasia + " ' where cnpj = " + loja.Cnpj;
                 executaSql();
             }
             catch (Exception ex)
@@ -112,7 +112,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "select cnpj, razaosocial, nomefantasia from loja where cnpj =" + loja.Cnpj;
+                string sql = "select cnpj, razaosocial, nomefantasia from loja where cnpj = '" + loja.Cnpj + "'";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())
