@@ -30,6 +30,19 @@ namespace AplicacaoFoodShop
                 localhost.Service1 sv = new localhost.Service1();
                 sv.InsertUsuario(usuario);
                 MessageBox.Show("Usuário Cadastrado com Sucesso!");
+
+                /*ESTA PARTE EH PARA SER TROCADA PELAS DUAS LINHAS DE CIMA,
+                 * MAS ESTA DANDO ERRO E EU NAO ESTOU SABENDO AJEITAR.
+                 *
+                 * String retornoMsg = sv.InsertUsuario(usuario);
+                if (retornoMsg == null || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Usuario Cadastrado com Sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }*/
             }
             catch (Exception ex)
             {

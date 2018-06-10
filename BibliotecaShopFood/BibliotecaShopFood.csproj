@@ -87,6 +87,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="RegraNegocio\RegraUsuarioImpl.cs" />
+    <Compile Include="RegraNegocio\RegraUsuario .cs" />
+    <Compile Include="RegraNegocio\RegraProdutoImpl .cs" />
+    <Compile Include="RegraNegocio\RegraProduto .cs" />
     <Compile Include="RegraNegocio\RegraCartao.cs" />
     <Compile Include="RegraNegocio\RegraCartaoImpl.cs" />
     <Compile Include="RegraNegocio\RegraLoja.cs" />

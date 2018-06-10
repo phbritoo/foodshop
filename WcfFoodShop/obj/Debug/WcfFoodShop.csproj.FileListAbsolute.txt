@@ -20,3 +20,14 @@ C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodS
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CopyComplete
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.dll
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.pdb
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\WcfFoodShop.dll.config
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\WcfFoodShop.dll
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\WcfFoodShop.pdb
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\BibliotecaShopFood.pdb
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\bin\BibliotecaShopFood.dll.config
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csprojAssemblyReference.cache
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CoreCompileInputs.cache
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.csproj.CopyComplete
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.dll
+C:\Users\paulo\Documents\foodshop\WcfFoodShop\obj\Debug\WcfFoodShop.pdb

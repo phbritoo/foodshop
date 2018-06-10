@@ -29,7 +29,20 @@ namespace AplicacaoFoodShop
                 localhost.Service1 sv = new localhost.Service1();
                 sv.InsertProduto(produto);
                 MessageBox.Show("Produto Cadastrado com Sucesso!");
-            } 
+
+                /*ESTA PARTE EH PARA SER TROCADA PELAS DUAS LINHAS DE CIMA,
+                 * MAS ESTA DANDO ERRO E EU NAO ESTOU SABENDO AJEITAR.
+                 * 
+                 * String retornoMsg = sv.InsertProduto(produto);
+                if (retornoMsg == null || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Produto Cadastrado com Sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }*/
+            }
             catch (Exception ex)
             {
                 throw new Exception("Erro ao conectar e inserir" + ex.Message);
