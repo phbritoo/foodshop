@@ -10,7 +10,7 @@ using BibliotecaShopFood.Conexao;
 
 namespace BibliotecaShopFood.Dados
 {
-    class ProdutoLojaDAOImpl : ConexaoBdSql , ProdutoLojaDAO
+    public class ProdutoLojaDAOImpl : ConexaoBdSql , ProdutoLojaDAO
     {
         public void Delete(ProdutoLoja produtoLoja)
         {
@@ -77,9 +77,9 @@ namespace BibliotecaShopFood.Dados
                     produto.Marca = DbReader.GetString(DbReader.GetOrdinal("produto.marca"));
                     produtoLoja.Produto = produto;
                     Loja loja = new Loja();
-                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("cnpj"));
-                    loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
-                    loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
+                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("loja.cnpj"));
+                    loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("loja.razaosocial"));
+                    loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("loja.nomefantasia"));
                     produtoLoja.Loja = loja;
                     produtoLoja.Preco = DbReader.GetFloat(DbReader.GetOrdinal("produto_loja.valor"));
                     retorno.Add(produtoLoja);
@@ -101,7 +101,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "update produto_loja set produtoId = '" +produtoLoja.Produto.Id+"', cnpj = '"+produtoLoja.Loja.Cnpj+"', valor = '" + produtoLoja.Preco + "'" + "where produtoId =" + produtoLoja.Produto.CodigoBarra + " and cnpj =" + "'" + produtoLoja.Loja.Cnpj + "'";
+                sql = "update produto_loja set produtoId = '" + produtoLoja.Produto.Id + "', cnpj = '" + produtoLoja.Loja.Cnpj + "', valor = '" + produtoLoja.Preco + "'" + "where produtoId =" + produtoLoja.Produto.CodigoBarra + " and cnpj =" + "'" + produtoLoja.Loja.Cnpj + "'";
                 executaSql();
             }
             catch (Exception ex)

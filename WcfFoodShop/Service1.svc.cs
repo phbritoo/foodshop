@@ -21,7 +21,7 @@ namespace WcfFoodShop
                 CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
                 carrinhodao.Delete(carrinho);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw new Exception("Erro ao conectar e remover" + ex.Message);
@@ -40,7 +40,7 @@ namespace WcfFoodShop
             {
 
                 throw new Exception("Erro ao conectar e remover" + ex.Message);
-            } 
+            }
         }
 
         public void DeleteLoja(Loja loja)
@@ -125,7 +125,7 @@ namespace WcfFoodShop
 
                 throw new Exception("Erro ao conectar e inserir" + ex.Message);
             }
-           
+
         }
 
         public String InsertLoja(Loja loja)
@@ -261,7 +261,7 @@ namespace WcfFoodShop
                 RegraUsuario usuarioRegra = new RegraUsuarioImpl();
                 return usuarioRegra.Select(filtro);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw new Exception("Erro ao conectar e selecionar" + ex.Message);
@@ -289,7 +289,7 @@ namespace WcfFoodShop
                 CartaoDAO cartadao = new CartaoDAOImpl();
                 cartadao.Select(cartao);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw new Exception("Erro ao conectar e atualizar" + ex.Message);
@@ -367,24 +367,68 @@ namespace WcfFoodShop
             }
         }
 
-        public void Insert(ProdutoLoja produtoLoja)
+        public void InsertProdutoLoja(ProdutoLoja produtoLoja)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
+                produtoLojaDAOImpl.Insert(produtoLoja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro no processo de associar produto a loja" + ex.Message);
+            }
         }
 
-        public void Update(ProdutoLoja produtoLoja)
+        public void UpdateProdutoLoja(ProdutoLoja produtoLoja)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
+                produtoLojaDAOImpl.Update(produtoLoja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro no processo de atualizar a associação do produto a loja" + ex.Message);
+            }
         }
 
-        public void Delete(ProdutoLoja produtoLoja)
+        public void DeleteProdutoLoja(ProdutoLoja produtoLoja)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
+                produtoLojaDAOImpl.Delete(produtoLoja);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro no processo de deletar relação de produto a loja" + ex.Message);
+            }
         }
 
-        public List<ProdutoLoja> List(ProdutoLoja filtro)
+        public List<ProdutoLoja> ListProdutoLoja(ProdutoLoja filtro)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
+                List<ProdutoLoja> retorno = new List<ProdutoLoja>();
+                retorno = produtoLojaDAOImpl.List(filtro);
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro no processo de deletar relação de produto a loja" + ex.Message);
+            }
         }
     }
 }
+
+
+
+
+
+    

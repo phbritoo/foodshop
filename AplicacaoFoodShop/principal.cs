@@ -58,5 +58,12 @@ namespace AplicacaoFoodShop
             NotaFiscal notafiscal = new NotaFiscal();
             notafiscal.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            ProdutoLoja produtoLoja = new ProdutoLoja();
+            produtoLoja.Show();
+        }
     }
 }

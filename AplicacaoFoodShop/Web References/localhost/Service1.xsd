@@ -324,16 +324,54 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Insert">
+  <xs:element name="InsertProdutoLoja">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produtoLoja" nillable="true" type="q32:ProdutoLoja" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertResponse">
+  <xs:element name="InsertProdutoLojaResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProdutoLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produtoLoja" nillable="true" type="q33:ProdutoLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProdutoLojaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProdutoLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="produtoLoja" nillable="true" type="q34:ProdutoLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProdutoLojaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProdutoLoja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q35:ProdutoLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListProdutoLojaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="ListProdutoLojaResult" nillable="true" type="q36:ArrayOfProdutoLoja" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

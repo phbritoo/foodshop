@@ -35,6 +35,7 @@
             this.buttonCartao = new System.Windows.Forms.Button();
             this.buttonCarrinho = new System.Windows.Forms.Button();
             this.buttonNotaFiscal = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonUsuario
@@ -97,6 +98,16 @@
             this.buttonNotaFiscal.UseVisualStyleBackColor = true;
             this.buttonNotaFiscal.Click += new System.EventHandler(this.buttonNotaFiscal_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(220, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 77);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Produto Loja";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +115,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonNotaFiscal);
             this.Controls.Add(this.buttonCarrinho);
             this.Controls.Add(this.buttonCartao);
@@ -124,5 +136,6 @@
         private System.Windows.Forms.Button buttonCartao;
         private System.Windows.Forms.Button buttonCarrinho;
         private System.Windows.Forms.Button buttonNotaFiscal;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaShopFood.Dados
 {
-    interface ProdutoLojaDAO
+    public interface ProdutoLojaDAO
     {
         void Insert(ProdutoLoja produtoLoja);
         void Update(ProdutoLoja produtoLoja);

@@ -39,8 +39,7 @@ namespace AplicacaoFoodShop
             }
             catch (Exception ex)
             {
-
-                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }

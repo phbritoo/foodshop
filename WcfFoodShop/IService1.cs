@@ -72,10 +72,13 @@ namespace WcfFoodShop
 
 
         [OperationContract]
-        void Insert(ProdutoLoja produtoLoja);
-        void Update(ProdutoLoja produtoLoja);
-        void Delete(ProdutoLoja produtoLoja);
-        List<ProdutoLoja> List(ProdutoLoja filtro);
+        void InsertProdutoLoja(ProdutoLoja produtoLoja);
+        [OperationContract]
+        void UpdateProdutoLoja(ProdutoLoja produtoLoja);
+        [OperationContract]
+        void DeleteProdutoLoja(ProdutoLoja produtoLoja);
+        [OperationContract]
+        List<ProdutoLoja> ListProdutoLoja(ProdutoLoja filtro);
 
 
 

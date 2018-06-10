@@ -23,7 +23,7 @@ namespace AplicacaoFoodShop.localhost {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
@@ -79,7 +79,13 @@ namespace AplicacaoFoodShop.localhost {
         
         private System.Threading.SendOrPostCallback LoginUsuarioLoginOperationCompleted;
         
-        private System.Threading.SendOrPostCallback InsertOperationCompleted;
+        private System.Threading.SendOrPostCallback InsertProdutoLojaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateProdutoLojaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteProdutoLojaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListProdutoLojaOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -195,7 +201,16 @@ namespace AplicacaoFoodShop.localhost {
         public event LoginUsuarioLoginCompletedEventHandler LoginUsuarioLoginCompleted;
         
         /// <remarks/>
-        public event InsertCompletedEventHandler InsertCompleted;
+        public event InsertProdutoLojaCompletedEventHandler InsertProdutoLojaCompleted;
+        
+        /// <remarks/>
+        public event UpdateProdutoLojaCompletedEventHandler UpdateProdutoLojaCompleted;
+        
+        /// <remarks/>
+        public event DeleteProdutoLojaCompletedEventHandler DeleteProdutoLojaCompleted;
+        
+        /// <remarks/>
+        public event ListProdutoLojaCompletedEventHandler ListProdutoLojaCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertCarrinho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -928,30 +943,117 @@ namespace AplicacaoFoodShop.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Insert", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void Insert([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
-            this.Invoke("Insert", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertProdutoLoja", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InsertProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
+            this.Invoke("InsertProdutoLoja", new object[] {
                         produtoLoja});
         }
         
         /// <remarks/>
-        public void InsertAsync(ProdutoLoja produtoLoja) {
-            this.InsertAsync(produtoLoja, null);
+        public void InsertProdutoLojaAsync(ProdutoLoja produtoLoja) {
+            this.InsertProdutoLojaAsync(produtoLoja, null);
         }
         
         /// <remarks/>
-        public void InsertAsync(ProdutoLoja produtoLoja, object userState) {
-            if ((this.InsertOperationCompleted == null)) {
-                this.InsertOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertOperationCompleted);
+        public void InsertProdutoLojaAsync(ProdutoLoja produtoLoja, object userState) {
+            if ((this.InsertProdutoLojaOperationCompleted == null)) {
+                this.InsertProdutoLojaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertProdutoLojaOperationCompleted);
             }
-            this.InvokeAsync("Insert", new object[] {
-                        produtoLoja}, this.InsertOperationCompleted, userState);
+            this.InvokeAsync("InsertProdutoLoja", new object[] {
+                        produtoLoja}, this.InsertProdutoLojaOperationCompleted, userState);
         }
         
-        private void OnInsertOperationCompleted(object arg) {
-            if ((this.InsertCompleted != null)) {
+        private void OnInsertProdutoLojaOperationCompleted(object arg) {
+            if ((this.InsertProdutoLojaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.InsertCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.InsertProdutoLojaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/UpdateProdutoLoja", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
+            this.Invoke("UpdateProdutoLoja", new object[] {
+                        produtoLoja});
+        }
+        
+        /// <remarks/>
+        public void UpdateProdutoLojaAsync(ProdutoLoja produtoLoja) {
+            this.UpdateProdutoLojaAsync(produtoLoja, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateProdutoLojaAsync(ProdutoLoja produtoLoja, object userState) {
+            if ((this.UpdateProdutoLojaOperationCompleted == null)) {
+                this.UpdateProdutoLojaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateProdutoLojaOperationCompleted);
+            }
+            this.InvokeAsync("UpdateProdutoLoja", new object[] {
+                        produtoLoja}, this.UpdateProdutoLojaOperationCompleted, userState);
+        }
+        
+        private void OnUpdateProdutoLojaOperationCompleted(object arg) {
+            if ((this.UpdateProdutoLojaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateProdutoLojaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeleteProdutoLoja", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
+            this.Invoke("DeleteProdutoLoja", new object[] {
+                        produtoLoja});
+        }
+        
+        /// <remarks/>
+        public void DeleteProdutoLojaAsync(ProdutoLoja produtoLoja) {
+            this.DeleteProdutoLojaAsync(produtoLoja, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteProdutoLojaAsync(ProdutoLoja produtoLoja, object userState) {
+            if ((this.DeleteProdutoLojaOperationCompleted == null)) {
+                this.DeleteProdutoLojaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteProdutoLojaOperationCompleted);
+            }
+            this.InvokeAsync("DeleteProdutoLoja", new object[] {
+                        produtoLoja}, this.DeleteProdutoLojaOperationCompleted, userState);
+        }
+        
+        private void OnDeleteProdutoLojaOperationCompleted(object arg) {
+            if ((this.DeleteProdutoLojaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteProdutoLojaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListProdutoLoja", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas")]
+        public ProdutoLoja[] ListProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja filtro) {
+            object[] results = this.Invoke("ListProdutoLoja", new object[] {
+                        filtro});
+            return ((ProdutoLoja[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListProdutoLojaAsync(ProdutoLoja filtro) {
+            this.ListProdutoLojaAsync(filtro, null);
+        }
+        
+        /// <remarks/>
+        public void ListProdutoLojaAsync(ProdutoLoja filtro, object userState) {
+            if ((this.ListProdutoLojaOperationCompleted == null)) {
+                this.ListProdutoLojaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListProdutoLojaOperationCompleted);
+            }
+            this.InvokeAsync("ListProdutoLoja", new object[] {
+                        filtro}, this.ListProdutoLojaOperationCompleted, userState);
+        }
+        
+        private void OnListProdutoLojaOperationCompleted(object arg) {
+            if ((this.ListProdutoLojaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListProdutoLojaCompleted(this, new ListProdutoLojaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -975,7 +1077,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1022,7 +1124,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1070,7 +1172,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1117,7 +1219,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1177,7 +1279,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1250,7 +1352,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1320,7 +1422,7 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1419,23 +1521,23 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertCarrinhoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateCarrinhoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteCarrinhoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectCarrinhoCompletedEventHandler(object sender, SelectCarrinhoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectCarrinhoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1457,11 +1559,11 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertCartaoCompletedEventHandler(object sender, InsertCartaoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InsertCartaoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1483,19 +1585,19 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateCartaoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteCartaoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectCartaoCompletedEventHandler(object sender, SelectCartaoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectCartaoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1517,11 +1619,11 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertLojaCompletedEventHandler(object sender, InsertLojaCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InsertLojaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1543,19 +1645,19 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectLojaCompletedEventHandler(object sender, SelectLojaCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectLojaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1577,23 +1679,23 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertNotaFiscalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateNotaFiscalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteNotaFiscalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectNotaFiscalCompletedEventHandler(object sender, SelectNotaFiscalCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectNotaFiscalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1615,11 +1717,11 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertProdutoCompletedEventHandler(object sender, InsertProdutoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InsertProdutoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1641,19 +1743,19 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateProdutoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteProdutoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectProdutoCompletedEventHandler(object sender, SelectProdutoCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectProdutoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1675,11 +1777,11 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void InsertUsuarioCompletedEventHandler(object sender, InsertUsuarioCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class InsertUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1701,19 +1803,19 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void UpdateUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void DeleteUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void SelectUsuarioCompletedEventHandler(object sender, SelectUsuarioCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SelectUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1735,11 +1837,11 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     public delegate void LoginUsuarioLoginCompletedEventHandler(object sender, LoginUsuarioLoginCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class LoginUsuarioLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -1761,8 +1863,42 @@ namespace AplicacaoFoodShop.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void InsertCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void InsertProdutoLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void UpdateProdutoLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void DeleteProdutoLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    public delegate void ListProdutoLojaCompletedEventHandler(object sender, ListProdutoLojaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2046.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListProdutoLojaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListProdutoLojaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ProdutoLoja[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ProdutoLoja[])(this.results[0]));
+            }
+        }
+    }
 }
 
 #pragma warning restore 1591

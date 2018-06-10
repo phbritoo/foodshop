@@ -100,4 +100,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProdutoLoja" nillable="true" type="tns:ProdutoLoja" />
+  <xs:complexType name="ArrayOfProdutoLoja">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProdutoLoja" nillable="true" type="tns:ProdutoLoja" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProdutoLoja" nillable="true" type="tns:ArrayOfProdutoLoja" />
 </xs:schema>

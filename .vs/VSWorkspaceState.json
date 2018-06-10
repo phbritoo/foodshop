@@ -9,13 +9,7 @@
     "\\AplicacaoFoodShop\\obj\\Release",
     "\\BibliotecaShopFood",
     "\\BibliotecaShopFood\\bin",
-    "\\BibliotecaShopFood\\bin\\Debug",
-    "\\BibliotecaShopFood\\Dados",
-    "\\BibliotecaShopFood\\Gui",
-    "\\BibliotecaShopFood\\obj",
-    "\\BibliotecaShopFood\\obj\\Debug",
-    "\\BibliotecaShopFood\\Properties"
+    "\\BibliotecaShopFood\\bin\\Debug"
   ],
-  "SelectedNode": "\\AplicacaoFoodShop\\Web References\\localhost\\NotaFiscal.datasource",
   "PreviewInSolutionExplorer": false
 }

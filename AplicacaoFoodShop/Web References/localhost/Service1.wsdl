@@ -157,11 +157,29 @@
   <wsdl:message name="IService1_LoginUsuarioLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUsuarioLoginResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Insert_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insert" />
+  <wsdl:message name="IService1_InsertProdutoLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProdutoLoja" />
   </wsdl:message>
-  <wsdl:message name="IService1_Insert_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  <wsdl:message name="IService1_InsertProdutoLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProdutoLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProdutoLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProdutoLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProdutoLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProdutoLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProdutoLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProdutoLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProdutoLojaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListProdutoLoja_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListProdutoLoja" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListProdutoLoja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListProdutoLojaResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="InsertCarrinho">
@@ -264,9 +282,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLogin" message="tns:IService1_LoginUsuarioLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginUsuarioLoginResponse" message="tns:IService1_LoginUsuarioLogin_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Insert">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Insert" message="tns:IService1_Insert_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertResponse" message="tns:IService1_Insert_OutputMessage" />
+    <wsdl:operation name="InsertProdutoLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertProdutoLoja" message="tns:IService1_InsertProdutoLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertProdutoLojaResponse" message="tns:IService1_InsertProdutoLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProdutoLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProdutoLoja" message="tns:IService1_UpdateProdutoLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProdutoLojaResponse" message="tns:IService1_UpdateProdutoLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProdutoLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteProdutoLoja" message="tns:IService1_DeleteProdutoLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteProdutoLojaResponse" message="tns:IService1_DeleteProdutoLoja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListProdutoLoja">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListProdutoLoja" message="tns:IService1_ListProdutoLoja_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListProdutoLojaResponse" message="tns:IService1_ListProdutoLoja_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -496,8 +526,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Insert">
-      <soap:operation soapAction="http://tempuri.org/IService1/Insert" style="document" />
+    <wsdl:operation name="InsertProdutoLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertProdutoLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProdutoLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateProdutoLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProdutoLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteProdutoLoja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListProdutoLoja">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListProdutoLoja" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
