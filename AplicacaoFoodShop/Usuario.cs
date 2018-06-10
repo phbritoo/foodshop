@@ -28,13 +28,7 @@ namespace AplicacaoFoodShop
                 usuario.Endereco = textBoxEndereco.Text;
                 usuario.Senha = textBoxSenha.Text;
                 localhost.Service1 sv = new localhost.Service1();
-                sv.InsertUsuario(usuario);
-                MessageBox.Show("Usuário Cadastrado com Sucesso!");
-
-                /*ESTA PARTE EH PARA SER TROCADA PELAS DUAS LINHAS DE CIMA,
-                 * MAS ESTA DANDO ERRO E EU NAO ESTOU SABENDO AJEITAR.
-                 *
-                 * String retornoMsg = sv.InsertUsuario(usuario);
+                String retornoMsg = sv.InsertUsuario(usuario);
                 if (retornoMsg == null || "".Equals(retornoMsg))
                 {
                     MessageBox.Show("Usuario Cadastrado com Sucesso!");
@@ -42,7 +36,7 @@ namespace AplicacaoFoodShop
                 else
                 {
                     MessageBox.Show(retornoMsg);
-                }*/
+                }
             }
             catch (Exception ex)
             {

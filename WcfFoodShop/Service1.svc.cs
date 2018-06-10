@@ -156,12 +156,12 @@ namespace WcfFoodShop
             }
         }
 
-        public void InsertProduto(Produto produto)
+        public String InsertProduto(Produto produto)
         {
             try
             {
-                ProdutoDAO produtodao = new ProdutoDAOImpl();
-                produtodao.Insert(produto);
+                RegraProduto produtoRegra = new RegraProdutoImpl();
+                return produtoRegra.Insert(produto);
             }
             catch (Exception ex)
             {
@@ -170,12 +170,12 @@ namespace WcfFoodShop
             }
         }
 
-        public void InsertUsuario(Usuario usuario)
+        public String InsertUsuario(Usuario usuario)
         {
             try
             {
-                UsuarioDAO usuariodao = new UsuarioDAOImpl();
-                usuariodao.Insert(usuario);
+                RegraUsuario usuarioRegra = new RegraUsuarioImpl();
+                return usuarioRegra.Insert(usuario);
             }
             catch (Exception ex)
             {
@@ -202,8 +202,8 @@ namespace WcfFoodShop
         {
             try
             {
-                CartaoDAO cartaodao = new CartaoDAOImpl();
-                return cartaodao.Select(cartao);
+                RegraCartao cartaoRegra = new RegraCartaoImpl();
+                return cartaoRegra.Select(cartao);
             }
             catch (Exception ex)
             {
@@ -244,8 +244,8 @@ namespace WcfFoodShop
         {
             try
             {
-                ProdutoDAO produtodao = new ProdutoDAOImpl();
-                return produtodao.Select(produto);
+                RegraProduto produtoRegra = new RegraProdutoImpl();
+                return produtoRegra.Select(produto);
             }
             catch (Exception ex)
             {
@@ -258,8 +258,8 @@ namespace WcfFoodShop
         {
             try
             {
-                UsuarioDAO usuariodao = new UsuarioDAOImpl();
-                return usuariodao.Select(filtro);
+                RegraUsuario usuarioRegra = new RegraUsuarioImpl();
+                return usuarioRegra.Select(filtro);
             }
             catch (Exception ex )
             {

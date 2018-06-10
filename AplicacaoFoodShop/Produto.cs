@@ -27,13 +27,8 @@ namespace AplicacaoFoodShop
                 produto.Marca = textBoxMarca.Text;
                 produto.Descricao = textBoxDescricao.Text;
                 localhost.Service1 sv = new localhost.Service1();
-                sv.InsertProduto(produto);
-                MessageBox.Show("Produto Cadastrado com Sucesso!");
-
-                /*ESTA PARTE EH PARA SER TROCADA PELAS DUAS LINHAS DE CIMA,
-                 * MAS ESTA DANDO ERRO E EU NAO ESTOU SABENDO AJEITAR.
-                 * 
-                 * String retornoMsg = sv.InsertProduto(produto);
+                
+                String retornoMsg = sv.InsertProduto(produto);
                 if (retornoMsg == null || "".Equals(retornoMsg))
                 {
                     MessageBox.Show("Produto Cadastrado com Sucesso!");
@@ -41,7 +36,7 @@ namespace AplicacaoFoodShop
                 else
                 {
                     MessageBox.Show(retornoMsg);
-                }*/
+                }
             }
             catch (Exception ex)
             {

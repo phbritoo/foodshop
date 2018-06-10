@@ -663,9 +663,11 @@ namespace AplicacaoFoodShop.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertProduto", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void InsertProduto([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Produto produto) {
-            this.Invoke("InsertProduto", new object[] {
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string InsertProduto([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Produto produto) {
+            object[] results = this.Invoke("InsertProduto", new object[] {
                         produto});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -685,7 +687,7 @@ namespace AplicacaoFoodShop.localhost {
         private void OnInsertProdutoOperationCompleted(object arg) {
             if ((this.InsertProdutoCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.InsertProdutoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.InsertProdutoCompleted(this, new InsertProdutoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -778,9 +780,11 @@ namespace AplicacaoFoodShop.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void InsertUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Usuario usuario) {
-            this.Invoke("InsertUsuario", new object[] {
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string InsertUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Usuario usuario) {
+            object[] results = this.Invoke("InsertUsuario", new object[] {
                         usuario});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -800,7 +804,7 @@ namespace AplicacaoFoodShop.localhost {
         private void OnInsertUsuarioOperationCompleted(object arg) {
             if ((this.InsertUsuarioCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.InsertUsuarioCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.InsertUsuarioCompleted(this, new InsertUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1612,7 +1616,29 @@ namespace AplicacaoFoodShop.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void InsertProdutoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void InsertProdutoCompletedEventHandler(object sender, InsertProdutoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertProdutoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertProdutoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
@@ -1650,7 +1676,29 @@ namespace AplicacaoFoodShop.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void InsertUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void InsertUsuarioCompletedEventHandler(object sender, InsertUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]

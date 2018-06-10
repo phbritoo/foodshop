@@ -118,7 +118,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "select cpf, nome, datanascimento, endereco, telefone, isadm from usuario where cpf = '" + usuario.Cpf + "'";
+                string sql = "select cpf, nome, endereco, telefone from usuario where cpf = '" + usuario.Cpf + "'";
                 SqlCommand cmd = new SqlCommand(sql, sqlConn);
                 SqlDataReader DbReader = cmd.ExecuteReader();
                 while (DbReader.Read())

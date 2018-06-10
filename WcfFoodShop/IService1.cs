@@ -50,7 +50,7 @@ namespace WcfFoodShop
         List<NotaFiscal> SelectNotaFiscal(NotaFiscal filtro);
 
         [OperationContract]
-        void InsertProduto(Produto produto);
+        String InsertProduto(Produto produto);
         [OperationContract]
         void UpdateProduto(Produto produto);
         [OperationContract]
@@ -59,7 +59,7 @@ namespace WcfFoodShop
         List<Produto> SelectProduto(Produto produto);
 
         [OperationContract]
-        void InsertUsuario(Usuario usuario);
+        String InsertUsuario(Usuario usuario);
         [OperationContract]
         void UpdateUsuario(Usuario usuario);
         [OperationContract]
