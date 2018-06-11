@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonUsuarioOk = new System.Windows.Forms.Button();
             this.comboBoxCartao = new System.Windows.Forms.ComboBox();
+            this.buttonCadastrarCarrinho = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxUsuario
@@ -72,6 +73,16 @@
             this.comboBoxCartao.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCartao.TabIndex = 3;
             // 
+            // buttonCadastrarCarrinho
+            // 
+            this.buttonCadastrarCarrinho.Location = new System.Drawing.Point(207, 158);
+            this.buttonCadastrarCarrinho.Name = "buttonCadastrarCarrinho";
+            this.buttonCadastrarCarrinho.Size = new System.Drawing.Size(94, 32);
+            this.buttonCadastrarCarrinho.TabIndex = 4;
+            this.buttonCadastrarCarrinho.Text = "Cadastrar";
+            this.buttonCadastrarCarrinho.UseVisualStyleBackColor = true;
+            this.buttonCadastrarCarrinho.Click += new System.EventHandler(this.buttonCadastrarCarrinho_Click);
+            // 
             // Carrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,6 +90,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCadastrarCarrinho);
             this.Controls.Add(this.comboBoxCartao);
             this.Controls.Add(this.buttonUsuarioOk);
             this.Controls.Add(this.label1);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonUsuarioOk;
         private System.Windows.Forms.ComboBox comboBoxCartao;
+        private System.Windows.Forms.Button buttonCadastrarCarrinho;
     }
 }

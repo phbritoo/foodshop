@@ -33,7 +33,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "insert into carrinho (cartaocreditoid, usuarioid) values('" + carrinho.Cartaocreditoid.Numero + "','" + carrinho.UsuarioId.Cpf + "')";
+                sql = "insert into carrinho (cartaocreditoid, usuarioid) values( " + carrinho.Cartaocreditoid.Id + "," + carrinho.UsuarioId.UsuarioId + ")";
                 executaSql();
 
             }

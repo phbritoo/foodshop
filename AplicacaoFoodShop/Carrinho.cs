@@ -17,18 +17,19 @@ namespace AplicacaoFoodShop
             InitializeComponent();
             preencherComboboxUsuario();
 
+
         }
 
         private void buttonUsuarioOk_Click(object sender, EventArgs e)
         {
-           localhost.Cartao cartao = new localhost.Cartao();
-           localhost.Usuario usuario = new localhost.Usuario();
-           usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
-           cartao.Usuario = usuario;
-           localhost.Service1 sv = new localhost.Service1();
-           sv.SelectCartao(cartao);
-           preencherComboboxCartao();
-           
+            localhost.Cartao cartao = new localhost.Cartao();
+            localhost.Usuario usuario = new localhost.Usuario();
+            usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
+            cartao.Usuario = usuario;
+            localhost.Service1 sv = new localhost.Service1();
+            sv.SelectCartao(cartao);
+            preencherComboboxCartao();
+
         }
 
         private void preencherComboboxUsuario()
@@ -63,13 +64,44 @@ namespace AplicacaoFoodShop
             dataSourceCartao.Add(cartaovazio);
             foreach (localhost.Cartao cartaolista in sv.SelectCartao(cartao))
             {
-               dataSourceCartao.Add(cartao);
+                dataSourceCartao.Add(cartaolista);
             }
 
-           comboBoxUsuario.DataSource = dataSourceCartao;
-            comboBoxUsuario.DisplayMember = "numero";
-            comboBoxUsuario.ValueMember = "id";
+            comboBoxCartao.DataSource = dataSourceCartao;
+            comboBoxCartao.DisplayMember = "numero";
+            comboBoxCartao.ValueMember = "id";
         }
 
+        private void buttonCadastrarCarrinho_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                localhost.Carrinho carrinho = new localhost.Carrinho();
+                localhost.Cartao cartao = new localhost.Cartao();
+                localhost.Usuario usuario = new localhost.Usuario();
+                usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
+                cartao.Id = Convert.ToInt32(comboBoxCartao.SelectedValue);
+                carrinho.UsuarioId = usuario;
+                carrinho.Cartaocreditoid = cartao;
+                localhost.Service1 sv = new localhost.Service1();
+
+                String retornoMsg = sv.InsertCarrinho(carrinho);
+
+                if (retornoMsg == "" || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Cartão cadastrado com sucesso");
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+            }
+        }
     }
 }

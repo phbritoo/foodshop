@@ -33,7 +33,7 @@ namespace BibliotecaShopFood.ClassesBasicas
             this.usuarioId = usuarioId;
         }
 
-        [DataMember(IsRequired = false)]
+        [DataMember(IsRequired = true)]
         public int Id { get => id; set => id = value; }
         [DataMember(IsRequired = true)]
         public string Numero { get => numero; set => numero = value; }

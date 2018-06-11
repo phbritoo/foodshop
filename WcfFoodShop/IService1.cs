@@ -14,7 +14,7 @@ namespace WcfFoodShop
     public interface IService1
     {
         [OperationContract]
-        void InsertCarrinho(Carrinho carrinho);
+        String InsertCarrinho(Carrinho carrinho);
         [OperationContract]
         void UpdateCarrinho(Carrinho carrinho);
         [OperationContract]

@@ -60,13 +60,14 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
+                
 
                 string sql = "select cartaocredito.id, cartaocredito.numero, cartaocredito.bandeira, cartaocredito.codigoseguranca, usuario.id, usuario.nome FROM cartaocredito INNER JOIN USUARIO ON cartaocredito.usuarioid = usuario.id";
-                //string sql = "SELECT numero, bandeira, codigoseguranca FROM cartaocredito where id = id";
+                
                // if (filtro.Usuario.UsuarioId > 0 )
-              //  {
-              //     sql += " where usuario.id like " + filtro.Usuario.UsuarioId + "";
-              //  }
+               // {
+               //   sql += " where usuario.id like " + filtro.Usuario.UsuarioId + "";
+               // }
                 if (filtro.Bandeira != null && filtro.Bandeira.Trim().Equals("") == false)
                 {
                     sql += " and bandeira like '%" + filtro.Bandeira + "%'";

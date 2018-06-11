@@ -99,12 +99,12 @@ namespace WcfFoodShop
             }
         }
 
-        public void InsertCarrinho(Carrinho carrinho)
+        public String InsertCarrinho(Carrinho carrinho)
         {
             try
             {
-                CarrinhoDAO carrinhodao = new CarrinhoDAOImpl();
-                carrinhodao.Insert(carrinho);
+                RegraCarrinho carrinhoRegra = new RegraCarrinhoImpl();
+                return carrinhoRegra.Insert(carrinho);
             }
             catch (Exception ex)
             {
