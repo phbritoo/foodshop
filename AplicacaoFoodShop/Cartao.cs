@@ -15,6 +15,7 @@ namespace AplicacaoFoodShop
         public Cartao()
         {
             InitializeComponent();
+            preencherCombobox();
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
@@ -22,9 +23,12 @@ namespace AplicacaoFoodShop
             try
             {
                 localhost.Cartao cartao = new localhost.Cartao();
+                localhost.Usuario usuario = new localhost.Usuario();
                 cartao.Numero = textBoxNumero.Text;
                 cartao.Bandeira = textBoxBandeira.Text;
                 cartao.CodigoSeguranca = textBoxCodigoSeguranca.Text;
+                usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
+                cartao.Usuario = usuario;  
                 localhost.Service1 sv = new localhost.Service1();
 
                 String retornoMsg = sv.InsertCartao(cartao);
@@ -43,8 +47,30 @@ namespace AplicacaoFoodShop
             catch (Exception ex)
             {
 
-                MessageBox.Show("Erro ao conectar e inserir" + ex.Message);
+                MessageBox.Show("Erro ao conectar e inserir " + ex.Message);
             }
+
+        }
+
+        public void preencherCombobox()
+        {
+            localhost.Service1 sv = new localhost.Service1();
+            var dataSourceUsuario = new List<localhost.Usuario>();
+            localhost.Usuario usuario = new localhost.Usuario();
+            localhost.Usuario usuariovazio = new localhost.Usuario();
+            usuariovazio.UsuarioId = 0;
+            usuariovazio.Nome = "Selecione um Usuário";
+            dataSourceUsuario.Add(usuariovazio);            
+            
+
+            foreach (localhost.Usuario usuariolista in sv.SelectUsuario(usuario))
+            {
+                dataSourceUsuario.Add(usuariolista);
+            }
+
+            comboBoxUsuario.DataSource = dataSourceUsuario;
+            comboBoxUsuario.DisplayMember = "nome";
+            comboBoxUsuario.ValueMember = "usuarioId";
 
         }
 
@@ -61,6 +87,7 @@ namespace AplicacaoFoodShop
                     ListViewItem lista = listViewCartao.Items.Add(cartaolista.Numero);
                     lista.SubItems.Add(cartaolista.Bandeira);
                     lista.SubItems.Add(cartaolista.CodigoSeguranca);
+                    lista.SubItems.Add(cartaolista.Usuario.Nome);
                  
                 }
             }

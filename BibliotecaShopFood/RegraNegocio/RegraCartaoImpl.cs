@@ -58,6 +58,11 @@ namespace BibliotecaShopFood.RegraNegocio
                         {
                             msgRetorno = msgRetorno + " O código de segurança deve possuir 3 dígitos \n";
                         }
+
+                        //if (cartao.Usuario.Id == 0)
+                        //{
+                        //    msgRetorno = msgRetorno + "Selecione um usuário \n";
+                        //}
                     }
                 }
                 if (msgRetorno == "")

@@ -15,56 +15,61 @@ namespace AplicacaoFoodShop
         public Carrinho()
         {
             InitializeComponent();
+            preencherComboboxUsuario();
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonUsuarioOk_Click(object sender, EventArgs e)
         {
-
+           localhost.Cartao cartao = new localhost.Cartao();
+           localhost.Usuario usuario = new localhost.Usuario();
+           usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
+           cartao.Usuario = usuario;
+           localhost.Service1 sv = new localhost.Service1();
+           sv.SelectCartao(cartao);
+           preencherComboboxCartao();
+           
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void preencherComboboxUsuario()
         {
+            localhost.Service1 sv = new localhost.Service1();
+            var dataSourceUsuario = new List<localhost.Usuario>();
+            localhost.Usuario usuario = new localhost.Usuario();
+            localhost.Usuario usuariovazio = new localhost.Usuario();
+            usuariovazio.UsuarioId = 0;
+            usuariovazio.Nome = "Selecione um Usuário";
+            dataSourceUsuario.Add(usuariovazio);
 
+
+            foreach (localhost.Usuario usuariolista in sv.SelectUsuario(usuario))
+            {
+                dataSourceUsuario.Add(usuariolista);
+            }
+
+            comboBoxUsuario.DataSource = dataSourceUsuario;
+            comboBoxUsuario.DisplayMember = "nome";
+            comboBoxUsuario.ValueMember = "usuarioId";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void preencherComboboxCartao()
         {
+            localhost.Service1 sv = new localhost.Service1();
+            var dataSourceCartao = new List<localhost.Cartao>();
+            localhost.Cartao cartao = new localhost.Cartao();
+            localhost.Cartao cartaovazio = new localhost.Cartao();
+            cartaovazio.Id = 0;
+            cartaovazio.Numero = "Selecione um Cartão";
+            dataSourceCartao.Add(cartaovazio);
+            foreach (localhost.Cartao cartaolista in sv.SelectCartao(cartao))
+            {
+               dataSourceCartao.Add(cartao);
+            }
 
+           comboBoxUsuario.DataSource = dataSourceCartao;
+            comboBoxUsuario.DisplayMember = "numero";
+            comboBoxUsuario.ValueMember = "id";
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonListar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxBandeira_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNumero_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listViewNota_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

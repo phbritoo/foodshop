@@ -51,7 +51,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT cpf, nome, endereco, telefone FROM usuario where id = id";
+                string sql = "SELECT id, cpf, nome, endereco, telefone FROM usuario where id = id";
                 if (filtro.Cpf != null)
                 {
                     sql += " and cpf like '%" + filtro.Cpf + "%'";
@@ -78,6 +78,7 @@ namespace BibliotecaShopFood.Dados
                 while (DbReader.Read())
                 {
                     Usuario usuario = new Usuario();
+                    usuario.UsuarioId = DbReader.GetInt32(DbReader.GetOrdinal("id"));
                     usuario.Cpf = DbReader.GetString(DbReader.GetOrdinal("cpf"));
                     usuario.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
                     usuario.Endereco = DbReader.GetString(DbReader.GetOrdinal("endereco"));

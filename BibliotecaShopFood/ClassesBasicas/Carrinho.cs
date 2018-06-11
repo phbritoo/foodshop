@@ -12,13 +12,13 @@ namespace BibliotecaShopFood.ClassesBasicas
     {
         private int numero;
         private Cartao cartaocreditoid;
-        private Usuario usuarioid;
+        private Usuario usuarioId;
 
         [DataMember(IsRequired = true)]
         public int Numero { get => numero; set => numero = value; }
         [DataMember(IsRequired = true)]
         public Cartao Cartaocreditoid { get => cartaocreditoid; set => cartaocreditoid = value; }
         [DataMember(IsRequired = true)]
-        public Usuario Usuarioid { get => usuarioid; set => usuarioid = value; }
+        public Usuario UsuarioId { get => usuarioId; set => usuarioId = value; }
     }
 }

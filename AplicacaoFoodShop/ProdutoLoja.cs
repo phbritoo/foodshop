@@ -25,7 +25,11 @@ namespace AplicacaoFoodShop
 
             localhost.ProdutoLoja produtoLoja = new localhost.ProdutoLoja();
             localhost.Loja loja = new localhost.Loja();
+            localhost.Produto produto = new localhost.Produto();
             loja.Cnpj = comboBoxLoja.SelectedItem.ToString();
+            produto.Id = Convert.ToInt32(comboBoxProduto.SelectedValue);
+            produtoLoja.Produto = produto;
+            produtoLoja.Loja = loja;
 
             //produtoLoja.Loja = sv.SelectLoja(loja);
 

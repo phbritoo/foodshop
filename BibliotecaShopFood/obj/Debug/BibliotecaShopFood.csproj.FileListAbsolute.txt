@@ -22,7 +22,6 @@ C:\Users\Camilo\Desktop\ADS\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShop
 C:\Users\Camilo\Desktop\ADS\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.CoreCompileInputs.cache
 C:\Users\Camilo\Desktop\ADS\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.dll
 C:\Users\Camilo\Desktop\ADS\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
-C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csprojResolveAssemblyReference.cache
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.Gui.Form1.resources
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.GenerateResource.cache
 C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csproj.CoreCompileInputs.cache
@@ -52,3 +51,4 @@ C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFoo
 C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.dll
 C:\Users\paulo\Documents\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.pdb
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csprojAssemblyReference.cache
+C:\Users\Camilo\Desktop\foodshop\BibliotecaShopFood\obj\Debug\BibliotecaShopFood.csprojResolveAssemblyReference.cache

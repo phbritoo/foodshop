@@ -17,7 +17,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "delete from produto_loja where produtoId =" + produtoLoja.Produto.Id + " and cnpj =" + "'" + produtoLoja.Loja.Cnpj + "'";
+                sql = "delete from produto_loja where produtoId =" + produtoLoja.Produto.Id + " and cnpj =" + "'" + produtoLoja.Loja.Id + "'";
                 executaSql();
 
             }
@@ -33,7 +33,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "insert into produto_loja (produtoId, cnpj, valor) values('" + produtoLoja.Produto.Id + "','" + produtoLoja.Loja.Cnpj + "','" + produtoLoja.Preco +"')";
+                sql = "insert into produto_loja (produtoId, cnpj, valor) values(" + produtoLoja.Produto.Id + "," + produtoLoja.Loja.Id + "," + produtoLoja.Preco +")";
                 executaSql();
             }
             catch (Exception ex)

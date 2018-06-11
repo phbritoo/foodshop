@@ -39,7 +39,7 @@ namespace BibliotecaShopFood.Dados
                      {
                         
                         this.abrirConexao();
-                        sql = "insert into cartaocredito (numero, bandeira, codigoseguranca) values('" + cartao.Numero + "','" + cartao.Bandeira + "','"+ cartao.CodigoSeguranca + "')";
+                        sql = "insert into cartaocredito (numero, bandeira, codigoseguranca, usuarioid) values('" + cartao.Numero + "','" + cartao.Bandeira + "','"+ cartao.CodigoSeguranca + "'," + cartao.Usuario.UsuarioId + ")";
                         executaSql();
 
                     }
@@ -60,11 +60,13 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT numero, bandeira, codigoseguranca FROM cartaocredito where id = id";
-                if (filtro.Numero != null )
-                {
-                    sql += " and numero like '%" + filtro.Numero + "%'";
-                }
+
+                string sql = "select cartaocredito.id, cartaocredito.numero, cartaocredito.bandeira, cartaocredito.codigoseguranca, usuario.id, usuario.nome FROM cartaocredito INNER JOIN USUARIO ON cartaocredito.usuarioid = usuario.id";
+                //string sql = "SELECT numero, bandeira, codigoseguranca FROM cartaocredito where id = id";
+               // if (filtro.Usuario.UsuarioId > 0 )
+              //  {
+              //     sql += " where usuario.id like " + filtro.Usuario.UsuarioId + "";
+              //  }
                 if (filtro.Bandeira != null && filtro.Bandeira.Trim().Equals("") == false)
                 {
                     sql += " and bandeira like '%" + filtro.Bandeira + "%'";
@@ -81,9 +83,14 @@ namespace BibliotecaShopFood.Dados
                 while (DbReader.Read())
                 {
                      Cartao cartao = new Cartao();
+                     cartao.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
                      cartao.Numero = DbReader.GetString(DbReader.GetOrdinal("numero"));
                      cartao.Bandeira = DbReader.GetString(DbReader.GetOrdinal("bandeira"));
                      cartao.CodigoSeguranca = DbReader.GetString(DbReader.GetOrdinal("codigoseguranca"));
+                     Usuario usuario = new Usuario();
+                     usuario.UsuarioId = DbReader.GetInt32(DbReader.GetOrdinal("id"));
+                     usuario.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                     cartao.Usuario = usuario;
                      retorno.Add(cartao);
                 }
                 DbReader.Close();

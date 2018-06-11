@@ -33,7 +33,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "insert into carrinho (cartaocreditoid, usuarioid) values('" + carrinho.Cartaocreditoid.Numero + "','" + carrinho.Usuarioid.Cpf + "')";
+                sql = "insert into carrinho (cartaocreditoid, usuarioid) values('" + carrinho.Cartaocreditoid.Numero + "','" + carrinho.UsuarioId.Cpf + "')";
                 executaSql();
 
             }
@@ -60,9 +60,9 @@ namespace BibliotecaShopFood.Dados
                     sql += " and cartaocreditoid like '%" + filtro.Cartaocreditoid.Numero + "%'";
                 }
 
-                if (filtro.Usuarioid.Cpf != null && filtro.Usuarioid.Cpf.Trim().Equals("") == false)
+                if (filtro.UsuarioId.Cpf != null && filtro.UsuarioId.Cpf.Trim().Equals("") == false)
                 {
-                    sql += " and usuarioid like '%" + filtro.Usuarioid.Cpf + "%'";
+                    sql += " and usuarioid like '%" + filtro.UsuarioId.Cpf + "%'";
 
                 }
 
@@ -73,7 +73,7 @@ namespace BibliotecaShopFood.Dados
                     Carrinho carrinho = new Carrinho();
                     carrinho.Numero = DbReader.GetInt32(DbReader.GetOrdinal("numero"));
                     carrinho.Cartaocreditoid.Id = DbReader.GetInt32(DbReader.GetOrdinal("cartaocreditoid"));
-                    carrinho.Usuarioid.Id = DbReader.GetInt32(DbReader.GetOrdinal("usuarioid"));
+                    carrinho.UsuarioId.UsuarioId = DbReader.GetInt32(DbReader.GetOrdinal("usuarioid"));
                     retorno.Add(carrinho);
                 }
                 DbReader.Close();
@@ -94,7 +94,7 @@ namespace BibliotecaShopFood.Dados
             {
 
                 this.abrirConexao();
-                string sql = "update carrinho set numero =" + carrinho.Numero + ", cartaocreditoid = " + carrinho.Cartaocreditoid + ", usuarioid = " + carrinho.Usuarioid + " where numero = " + carrinho.Numero ;
+                string sql = "update carrinho set numero =" + carrinho.Numero + ", cartaocreditoid = " + carrinho.Cartaocreditoid + ", usuarioid = " + carrinho.UsuarioId + " where numero = " + carrinho.Numero ;
                 executaSql();
             }
             catch (Exception ex)
