@@ -50,7 +50,7 @@ namespace BibliotecaShopFood.Dados
             {
                 this.abrirConexao();
                 string sql = "select produto.id, produto.codigobarra, produto.nome,produto.descricao,produto.marca, " +
-                                     "loja.Id , loja.cnpj, loja.razaosocial,loja.nomefantasia, produto_loja.valor " +
+                                     "loja.Id , loja.cnpj, loja.razaosocial,loja.nomefantasia, produto_loja.valor ,produto_loja.Id " +
                                      "from produto_loja "+
                              "inner join produto on produto.Id = produto_loja.produtoId " +
                              "inner join loja on loja.Id = produto_loja.LojaId";
@@ -83,6 +83,7 @@ namespace BibliotecaShopFood.Dados
                     loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
                     produtoLoja.Loja = loja;
                     produtoLoja.Preco = float.Parse(DbReader.GetDecimal(DbReader.GetOrdinal("valor")).ToString());
+                    produtoLoja.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
                     retorno.Add(produtoLoja);
                 }
                 DbReader.Close();

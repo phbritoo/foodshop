@@ -32,9 +32,9 @@
             this.pesquisarButton = new System.Windows.Forms.Button();
             this.listViewProdutoLoja = new System.Windows.Forms.ListView();
             this.Produto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Descrição = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Loja = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Preço = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Descrição = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.inputQtdItemsCarrinho = new System.Windows.Forms.TextBox();
@@ -42,6 +42,7 @@
             this.adicionarButton = new System.Windows.Forms.Button();
             this.removerButton = new System.Windows.Forms.Button();
             this.voltarButton = new System.Windows.Forms.Button();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // inputPesquisaProduto
@@ -53,7 +54,7 @@
             // 
             // pesquisarButton
             // 
-            this.pesquisarButton.Location = new System.Drawing.Point(669, 13);
+            this.pesquisarButton.Location = new System.Drawing.Point(669, 15);
             this.pesquisarButton.Name = "pesquisarButton";
             this.pesquisarButton.Size = new System.Drawing.Size(97, 22);
             this.pesquisarButton.TabIndex = 1;
@@ -64,6 +65,7 @@
             // listViewProdutoLoja
             // 
             this.listViewProdutoLoja.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
             this.Produto,
             this.Descrição,
             this.Loja,
@@ -78,23 +80,27 @@
             // 
             // Produto
             // 
+            this.Produto.DisplayIndex = 1;
             this.Produto.Text = "Produto";
             this.Produto.Width = 143;
             // 
+            // Descrição
+            // 
+            this.Descrição.DisplayIndex = 2;
+            this.Descrição.Text = "Descrição";
+            this.Descrição.Width = 148;
+            // 
             // Loja
             // 
+            this.Loja.DisplayIndex = 3;
             this.Loja.Text = "Loja";
             this.Loja.Width = 148;
             // 
             // Preço
             // 
+            this.Preço.DisplayIndex = 4;
             this.Preço.Text = "Preço";
             this.Preço.Width = 137;
-            // 
-            // Descrição
-            // 
-            this.Descrição.Text = "Descrição";
-            this.Descrição.Width = 148;
             // 
             // button1
             // 
@@ -104,6 +110,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Ver carrinho completo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -138,6 +145,7 @@
             this.adicionarButton.TabIndex = 14;
             this.adicionarButton.Text = "Adicionar";
             this.adicionarButton.UseVisualStyleBackColor = true;
+            this.adicionarButton.Click += new System.EventHandler(this.adicionarButton_Click);
             // 
             // removerButton
             // 
@@ -157,6 +165,11 @@
             this.voltarButton.Text = "Voltar";
             this.voltarButton.UseVisualStyleBackColor = true;
             this.voltarButton.Click += new System.EventHandler(this.voltarButton_Click);
+            // 
+            // ID
+            // 
+            this.ID.DisplayIndex = 0;
+            this.ID.Text = "ID";
             // 
             // Dashboard
             // 
@@ -196,5 +209,6 @@
         private System.Windows.Forms.Button adicionarButton;
         private System.Windows.Forms.Button removerButton;
         private System.Windows.Forms.Button voltarButton;
+        private System.Windows.Forms.ColumnHeader ID;
     }
 }

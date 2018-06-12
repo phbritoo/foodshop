@@ -72,7 +72,7 @@ namespace WcfFoodShop
 
 
         [OperationContract]
-        void InsertProdutoLoja(ProdutoLoja produtoLoja);
+        String InsertProdutoLoja(ProdutoLoja produtoLoja);
         [OperationContract]
         void UpdateProdutoLoja(ProdutoLoja produtoLoja);
         [OperationContract]
@@ -81,6 +81,14 @@ namespace WcfFoodShop
         List<ProdutoLoja> ListProdutoLoja(ProdutoLoja filtro);
 
 
+        [OperationContract]
+        String InsertCompra(Compra compra);
+        [OperationContract]
+        void UpdateCompra(Compra compra);
+        [OperationContract]
+        void DeleteCompra(Compra compra);
+        [OperationContract]
+        List<Compra> SelectCompra(Compra filtro);
 
 
     }

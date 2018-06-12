@@ -87,6 +87,14 @@ namespace AplicacaoFoodShop.localhost {
         
         private System.Threading.SendOrPostCallback ListProdutoLojaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InsertCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteCompraOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SelectCompraOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -211,6 +219,18 @@ namespace AplicacaoFoodShop.localhost {
         
         /// <remarks/>
         public event ListProdutoLojaCompletedEventHandler ListProdutoLojaCompleted;
+        
+        /// <remarks/>
+        public event InsertCompraCompletedEventHandler InsertCompraCompleted;
+        
+        /// <remarks/>
+        public event UpdateCompraCompletedEventHandler UpdateCompraCompleted;
+        
+        /// <remarks/>
+        public event DeleteCompraCompletedEventHandler DeleteCompraCompleted;
+        
+        /// <remarks/>
+        public event SelectCompraCompletedEventHandler SelectCompraCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertCarrinho", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -946,9 +966,11 @@ namespace AplicacaoFoodShop.localhost {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertProdutoLoja", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void InsertProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
-            this.Invoke("InsertProdutoLoja", new object[] {
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string InsertProdutoLoja([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ProdutoLoja produtoLoja) {
+            object[] results = this.Invoke("InsertProdutoLoja", new object[] {
                         produtoLoja});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -968,7 +990,7 @@ namespace AplicacaoFoodShop.localhost {
         private void OnInsertProdutoLojaOperationCompleted(object arg) {
             if ((this.InsertProdutoLojaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.InsertProdutoLojaCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.InsertProdutoLojaCompleted(this, new InsertProdutoLojaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1056,6 +1078,123 @@ namespace AplicacaoFoodShop.localhost {
             if ((this.ListProdutoLojaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ListProdutoLojaCompleted(this, new ListProdutoLojaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InsertCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string InsertCompra([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Compra compra) {
+            object[] results = this.Invoke("InsertCompra", new object[] {
+                        compra});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InsertCompraAsync(Compra compra) {
+            this.InsertCompraAsync(compra, null);
+        }
+        
+        /// <remarks/>
+        public void InsertCompraAsync(Compra compra, object userState) {
+            if ((this.InsertCompraOperationCompleted == null)) {
+                this.InsertCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertCompraOperationCompleted);
+            }
+            this.InvokeAsync("InsertCompra", new object[] {
+                        compra}, this.InsertCompraOperationCompleted, userState);
+        }
+        
+        private void OnInsertCompraOperationCompleted(object arg) {
+            if ((this.InsertCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertCompraCompleted(this, new InsertCompraCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/UpdateCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdateCompra([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Compra compra) {
+            this.Invoke("UpdateCompra", new object[] {
+                        compra});
+        }
+        
+        /// <remarks/>
+        public void UpdateCompraAsync(Compra compra) {
+            this.UpdateCompraAsync(compra, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateCompraAsync(Compra compra, object userState) {
+            if ((this.UpdateCompraOperationCompleted == null)) {
+                this.UpdateCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateCompraOperationCompleted);
+            }
+            this.InvokeAsync("UpdateCompra", new object[] {
+                        compra}, this.UpdateCompraOperationCompleted, userState);
+        }
+        
+        private void OnUpdateCompraOperationCompleted(object arg) {
+            if ((this.UpdateCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateCompraCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/DeleteCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void DeleteCompra([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Compra compra) {
+            this.Invoke("DeleteCompra", new object[] {
+                        compra});
+        }
+        
+        /// <remarks/>
+        public void DeleteCompraAsync(Compra compra) {
+            this.DeleteCompraAsync(compra, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteCompraAsync(Compra compra, object userState) {
+            if ((this.DeleteCompraOperationCompleted == null)) {
+                this.DeleteCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteCompraOperationCompleted);
+            }
+            this.InvokeAsync("DeleteCompra", new object[] {
+                        compra}, this.DeleteCompraOperationCompleted, userState);
+        }
+        
+        private void OnDeleteCompraOperationCompleted(object arg) {
+            if ((this.DeleteCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteCompraCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/SelectCompra", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas")]
+        public Compra[] SelectCompra([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Compra filtro) {
+            object[] results = this.Invoke("SelectCompra", new object[] {
+                        filtro});
+            return ((Compra[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SelectCompraAsync(Compra filtro) {
+            this.SelectCompraAsync(filtro, null);
+        }
+        
+        /// <remarks/>
+        public void SelectCompraAsync(Compra filtro, object userState) {
+            if ((this.SelectCompraOperationCompleted == null)) {
+                this.SelectCompraOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSelectCompraOperationCompleted);
+            }
+            this.InvokeAsync("SelectCompra", new object[] {
+                        filtro}, this.SelectCompraOperationCompleted, userState);
+        }
+        
+        private void OnSelectCompraOperationCompleted(object arg) {
+            if ((this.SelectCompraCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SelectCompraCompleted(this, new SelectCompraCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1290,13 +1429,84 @@ namespace AplicacaoFoodShop.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas")]
+    public partial class Compra {
+        
+        private Carrinho carrinhoField;
+        
+        private ProdutoLoja produtoLojaField;
+        
+        private int quantidadeField;
+        
+        private float valorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Carrinho Carrinho {
+            get {
+                return this.carrinhoField;
+            }
+            set {
+                this.carrinhoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public ProdutoLoja ProdutoLoja {
+            get {
+                return this.produtoLojaField;
+            }
+            set {
+                this.produtoLojaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public float Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2558.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas")]
     public partial class ProdutoLoja {
+        
+        private int idField;
         
         private Loja lojaField;
         
         private float precoField;
         
         private Produto produtoField;
+        
+        /// <remarks/>
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -1900,7 +2110,29 @@ namespace AplicacaoFoodShop.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
-    public delegate void InsertProdutoLojaCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void InsertProdutoLojaCompletedEventHandler(object sender, InsertProdutoLojaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertProdutoLojaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertProdutoLojaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
@@ -1932,6 +2164,66 @@ namespace AplicacaoFoodShop.localhost {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((ProdutoLoja[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void InsertCompraCompletedEventHandler(object sender, InsertCompraCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertCompraCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertCompraCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void UpdateCompraCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void DeleteCompraCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    public delegate void SelectCompraCompletedEventHandler(object sender, SelectCompraCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2558.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SelectCompraCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SelectCompraCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Compra[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Compra[])(this.results[0]));
             }
         }
     }

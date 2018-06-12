@@ -96,6 +96,7 @@
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
   <xs:complexType name="ProdutoLoja">
     <xs:sequence>
+      <xs:element name="Id" type="xs:int" />
       <xs:element name="Loja" nillable="true" type="tns:Loja" />
       <xs:element name="Preco" type="xs:float" />
       <xs:element name="Produto" nillable="true" type="tns:Produto" />
@@ -108,4 +109,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfProdutoLoja" nillable="true" type="tns:ArrayOfProdutoLoja" />
+  <xs:complexType name="Compra">
+    <xs:sequence>
+      <xs:element name="Carrinho" nillable="true" type="tns:Carrinho" />
+      <xs:element name="ProdutoLoja" nillable="true" type="tns:ProdutoLoja" />
+      <xs:element name="Quantidade" type="xs:int" />
+      <xs:element name="Valor" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Compra" nillable="true" type="tns:Compra" />
+  <xs:complexType name="ArrayOfCompra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compra" nillable="true" type="tns:Compra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompra" nillable="true" type="tns:ArrayOfCompra" />
 </xs:schema>

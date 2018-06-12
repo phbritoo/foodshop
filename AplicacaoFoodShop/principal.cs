@@ -69,7 +69,8 @@ namespace AplicacaoFoodShop
         private void button2_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Dashboard dashboard = new Dashboard();
+            localhost.Carrinho carrinho = new localhost.Carrinho();
+            Dashboard dashboard = new Dashboard(carrinho);
             dashboard.Show();
         }
     }

@@ -60,10 +60,12 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                
 
-                string sql = "select cartaocredito.id, cartaocredito.numero, cartaocredito.bandeira, cartaocredito.codigoseguranca, usuario.id, usuario.nome FROM cartaocredito INNER JOIN USUARIO ON cartaocredito.usuarioid = usuario.id";
-                
+
+                string sql = "select cartaocredito.id, cartaocredito.numero, cartaocredito.bandeira, cartaocredito.codigoseguranca, cartaocredito.usuarioid, usuario.id, usuario.nome FROM cartaocredito INNER JOIN USUARIO ON cartaocredito.usuarioid = usuario.id";
+
+
+
                 if (filtro.Usuario != null )
                 {
                   sql += " where usuario.id like " + filtro.Usuario.UsuarioId + "";

@@ -20,7 +20,7 @@ namespace AplicacaoFoodShop
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
-            try
+        try
             {
                 localhost.Cartao cartao = new localhost.Cartao();
                 localhost.Usuario usuario = new localhost.Usuario();

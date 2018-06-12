@@ -367,12 +367,12 @@ namespace WcfFoodShop
             }
         }
 
-        public void InsertProdutoLoja(ProdutoLoja produtoLoja)
+        public String InsertProdutoLoja(ProdutoLoja produtoLoja)
         {
             try
             {
-                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
-                produtoLojaDAOImpl.Insert(produtoLoja);
+                RegraProdutoLoja regraProdutoLoja = new RegraProdutoLojaImpl();
+                return regraProdutoLoja.Insert(produtoLoja);
             }
             catch (Exception ex)
             {
@@ -413,16 +413,40 @@ namespace WcfFoodShop
         {
             try
             {
-                ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
-                List<ProdutoLoja> retorno = new List<ProdutoLoja>();
-                retorno = produtoLojaDAOImpl.List(filtro);
-                return retorno;
+                RegraProdutoLoja regraProdutoLoja = new RegraProdutoLojaImpl();
+                return regraProdutoLoja.List(filtro);
+                //ProdutoLojaDAO produtoLojaDAOImpl = new ProdutoLojaDAOImpl();
+                //List<ProdutoLoja> retorno = new List<ProdutoLoja>();
+                //retorno = produtoLojaDAOImpl.List(filtro);
+                //return retorno;
             }
             catch (Exception ex)
             {
 
                 throw new Exception("Erro no processo de listar relação de produto a loja" + ex.Message);
             }
+        }
+
+        public string InsertCompra(Compra compra)
+        {
+            RegraCompra regraCompra = new RegraCompraImpl();
+            return regraCompra.Insert(compra);
+        }
+
+        public void UpdateCompra(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteCompra(Compra compra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Compra> SelectCompra(Compra filtro)
+        {
+            RegraCompra regraCompra = new RegraCompraImpl();
+            return regraCompra.Select(filtro);
         }
     }
 }

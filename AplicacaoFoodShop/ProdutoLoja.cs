@@ -21,17 +21,35 @@ namespace AplicacaoFoodShop
         private void button1_Click(object sender, EventArgs e)
         {
             //   localhost
-            localhost.Service1 sv = new localhost.Service1();
-            localhost.ProdutoLoja produtoLoja = new localhost.ProdutoLoja();
-            localhost.Loja loja = new localhost.Loja();
-            loja.Cnpj = comboBoxLoja.SelectedValue.ToString();
-            produtoLoja.Loja = sv.SelectLoja(loja).ElementAt(0);
-            localhost.Produto produto = new localhost.Produto();
-            produto.CodigoBarra = comboBoxProduto.SelectedValue.ToString();
-            produtoLoja.Produto = sv.SelectProduto(produto).ElementAt(0);
-            produtoLoja.Preco = float.Parse(inputPreco.Text);
-            sv.InsertProdutoLoja(produtoLoja);
-            MessageBox.Show("Produto associado a loja com sucesso!");
+            try
+            {
+                localhost.Service1 sv = new localhost.Service1();
+                localhost.ProdutoLoja produtoLoja = new localhost.ProdutoLoja();
+                localhost.Loja loja = new localhost.Loja();
+                loja.Cnpj = comboBoxLoja.SelectedValue.ToString();
+                produtoLoja.Loja = sv.SelectLoja(loja).ElementAt(0);
+                localhost.Produto produto = new localhost.Produto();
+                produto.CodigoBarra = comboBoxProduto.SelectedValue.ToString();
+                produtoLoja.Produto = sv.SelectProduto(produto).ElementAt(0);
+                produtoLoja.Preco = float.Parse(inputPreco.Text);
+
+                String retornoMsg = sv.InsertProdutoLoja(produtoLoja);
+
+                if (retornoMsg == null || "".Equals(retornoMsg))
+                {
+                    MessageBox.Show("Produto associado a loja com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show(retornoMsg);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erro ao conectar e inserir " + ex.Message);
+            }
         }
 
         private void ProdutoLoja_Load(object sender, EventArgs e)

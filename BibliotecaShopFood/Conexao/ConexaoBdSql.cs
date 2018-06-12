@@ -11,10 +11,10 @@ namespace BibliotecaShopFood.Conexao
     {
         public SqlConnection sqlConn;
         public String sql;
-        private const string local = @"CPX-4VNQMJYC701\SQLEXPRESS";
+        private const string local = @"CASA\SQLEXPRESS";
         private const string banco_de_dados = "SHOPFOOD";
-        private const string usuario = "Luiz";
-        private const string senha = "Guilherme2";
+        private const string usuario = "camilo";
+        private const string senha = "140784";
         string connectionStringSqlServer = @"Data Source=" + local + ";Initial Catalog=" + banco_de_dados + ";UId=" + usuario + ";Password=" + senha + ";";
 
 

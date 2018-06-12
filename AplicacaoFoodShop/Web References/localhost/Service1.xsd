@@ -335,7 +335,9 @@
   </xs:element>
   <xs:element name="InsertProdutoLojaResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertProdutoLojaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateProdutoLoja">
@@ -373,6 +375,58 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="ListProdutoLojaResult" nillable="true" type="q36:ArrayOfProdutoLoja" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="compra" nillable="true" type="q37:Compra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCompraResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="compra" nillable="true" type="q38:Compra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCompraResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="compra" nillable="true" type="q39:Compra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCompraResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCompra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="filtro" nillable="true" type="q40:Compra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SelectCompraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/BibliotecaShopFood.ClassesBasicas" minOccurs="0" name="SelectCompraResult" nillable="true" type="q41:ArrayOfCompra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ClassesBasicas\Carrinho.cs" />
     <Compile Include="ClassesBasicas\Cartao.cs" />
+    <Compile Include="ClassesBasicas\Compra.cs" />
     <Compile Include="ClassesBasicas\Loja.cs" />
     <Compile Include="ClassesBasicas\NotaFiscal.cs" />
     <Compile Include="ClassesBasicas\Produto.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="Dados\CarrinhoDAOImpl.cs" />
     <Compile Include="Dados\CartaoDAO.cs" />
     <Compile Include="Dados\CartaoDAOImpl.cs" />
+    <Compile Include="Dados\CompraDAO.cs" />
+    <Compile Include="Dados\CompraDAOImpl.cs" />
     <Compile Include="Dados\LojaDAO.cs" />
     <Compile Include="Dados\LojaDAOImpl.cs" />
     <Compile Include="Dados\NotaFiscalDAO.cs" />
@@ -88,6 +91,10 @@
     </Compile>
     <Compile Include="RegraNegocio\RegraCarrinho.cs" />
     <Compile Include="RegraNegocio\RegraCarrinhoImpl.cs" />
+    <Compile Include="RegraNegocio\RegraCompra.cs" />
+    <Compile Include="RegraNegocio\RegraCompraImpl.cs" />
+    <Compile Include="RegraNegocio\RegraProdutoLoja.cs" />
+    <Compile Include="RegraNegocio\RegraProdutoLojaImpl.cs" />
     <Compile Include="RegraNegocio\RegraUsuarioImpl.cs" />
     <Compile Include="RegraNegocio\RegraUsuario .cs" />
     <Compile Include="RegraNegocio\RegraProdutoImpl .cs" />

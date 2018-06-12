@@ -62,6 +62,10 @@ namespace AplicacaoFoodShop
             cartaovazio.Id = 0;
             cartaovazio.Numero = "Selecione um Cartão";
             dataSourceCartao.Add(cartaovazio);
+            localhost.Usuario usuario = new localhost.Usuario();
+            usuario.UsuarioId = Convert.ToInt32(comboBoxUsuario.SelectedValue);
+            cartao.Usuario = usuario;
+
             foreach (localhost.Cartao cartaolista in sv.SelectCartao(cartao))
             {
                 dataSourceCartao.Add(cartaolista);
@@ -91,7 +95,7 @@ namespace AplicacaoFoodShop
 
                 if (retornoMsg == "" || "".Equals(retornoMsg))
                 {
-                    MessageBox.Show("Cartão cadastrado com sucesso");
+                    MessageBox.Show("Carrinho cadastrado com sucesso");
                 }
                 else
                 {
@@ -100,7 +104,7 @@ namespace AplicacaoFoodShop
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao conectar e inserir" + ex.Message);
+                MessageBox.Show("Erro ao conectar e inserir" + ex.Message);
             }
         }
     }
