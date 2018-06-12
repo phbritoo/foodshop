@@ -2,14 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\AplicacaoFoodShop",
-    "\\AplicacaoFoodShop\\bin",
-    "\\AplicacaoFoodShop\\bin\\Debug",
-    "\\AplicacaoFoodShop\\bin\\Release",
-    "\\AplicacaoFoodShop\\obj",
-    "\\AplicacaoFoodShop\\obj\\Release",
-    "\\BibliotecaShopFood",
-    "\\BibliotecaShopFood\\bin",
-    "\\BibliotecaShopFood\\bin\\Debug"
+    "\\BibliotecaShopFood"
   ],
   "PreviewInSolutionExplorer": false
 }

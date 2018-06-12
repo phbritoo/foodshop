@@ -50,7 +50,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT codigobarra, nome, descricao, marca FROM produto where id = id";
+                string sql = "SELECT id ,codigobarra, nome, descricao, marca FROM produto where id = id";
                 if (filtro.CodigoBarra != null)
                 {
                     sql += " and codigobarra like '%" + filtro.CodigoBarra + "%'";
@@ -77,6 +77,7 @@ namespace BibliotecaShopFood.Dados
                 while (DbReader.Read())
                 {
                     Produto produto = new Produto();
+                    produto.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
                     produto.CodigoBarra = DbReader.GetString(DbReader.GetOrdinal("codigobarra"));
                     produto.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
                     produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));

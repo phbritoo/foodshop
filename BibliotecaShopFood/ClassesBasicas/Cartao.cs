@@ -17,7 +17,7 @@ namespace BibliotecaShopFood.ClassesBasicas
         private String numero;
         private String bandeira;
         private String codigoSeguranca;
-        private Usuario usuarioId;
+        private Usuario usuario;
 
         public Cartao()
         {
@@ -30,7 +30,7 @@ namespace BibliotecaShopFood.ClassesBasicas
             this.numero = numero;
             this.bandeira = bandeira;
             this.codigoSeguranca = codigoSeguranca;
-            this.usuarioId = usuarioId;
+            this.usuario = usuarioId;
         }
 
         [DataMember(IsRequired = true)]
@@ -42,7 +42,7 @@ namespace BibliotecaShopFood.ClassesBasicas
         [DataMember(IsRequired = true)]
         public string CodigoSeguranca { get => codigoSeguranca; set => codigoSeguranca = value; }
         [DataMember(IsRequired = true)]
-        public Usuario Usuario { get => usuarioId; set => usuarioId = value; }
+        public Usuario Usuario { get => usuario; set => usuario = value; }
     }
 }
 #endregion

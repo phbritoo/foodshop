@@ -22,20 +22,16 @@ namespace AplicacaoFoodShop
         {
             //   localhost
             localhost.Service1 sv = new localhost.Service1();
-
             localhost.ProdutoLoja produtoLoja = new localhost.ProdutoLoja();
             localhost.Loja loja = new localhost.Loja();
+            loja.Cnpj = comboBoxLoja.SelectedValue.ToString();
+            produtoLoja.Loja = sv.SelectLoja(loja).ElementAt(0);
             localhost.Produto produto = new localhost.Produto();
-            loja.Cnpj = comboBoxLoja.SelectedItem.ToString();
-            produto.Id = Convert.ToInt32(comboBoxProduto.SelectedValue);
-            produtoLoja.Produto = produto;
-            produtoLoja.Loja = loja;
-
-            //produtoLoja.Loja = sv.SelectLoja(loja);
-
-
-            
+            produto.CodigoBarra = comboBoxProduto.SelectedValue.ToString();
+            produtoLoja.Produto = sv.SelectProduto(produto).ElementAt(0);
+            produtoLoja.Preco = float.Parse(inputPreco.Text);
             sv.InsertProdutoLoja(produtoLoja);
+            MessageBox.Show("Produto associado a loja com sucesso!");
         }
 
         private void ProdutoLoja_Load(object sender, EventArgs e)
@@ -73,11 +69,11 @@ namespace AplicacaoFoodShop
 
             comboBoxProduto.DataSource = dataSourceProduto;
             comboBoxProduto.DisplayMember = "nome";
-            comboBoxProduto.ValueMember = "id";
+            comboBoxProduto.ValueMember = "codigobarra";
 
             comboBoxLoja.DataSource = dataSourceLoja;
             comboBoxLoja.DisplayMember = "razaosocial";
-            comboBoxLoja.ValueMember = "id";
+            comboBoxLoja.ValueMember = "cnpj";
 
         }
 
@@ -86,6 +82,28 @@ namespace AplicacaoFoodShop
             this.Visible = false;
             Principal principal = new Principal();
             principal.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                localhost.Service1 sv = new localhost.Service1();
+                localhost.ProdutoLoja produtoLoja = new localhost.ProdutoLoja();
+                listViewProdutoLoja.Items.Clear();
+
+                foreach (localhost.ProdutoLoja produtolista in sv.ListProdutoLoja(produtoLoja))
+                {
+                    ListViewItem lista = listViewProdutoLoja.Items.Add(produtolista.Produto.Nome);
+                    lista.SubItems.Add(produtolista.Loja.RazaoSocial);
+                    lista.SubItems.Add(produtolista.Preco.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

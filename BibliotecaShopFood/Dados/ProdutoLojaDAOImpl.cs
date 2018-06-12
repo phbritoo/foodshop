@@ -17,7 +17,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "delete from produto_loja where produtoId =" + produtoLoja.Produto.Id + " and cnpj =" + "'" + produtoLoja.Loja.Id + "'";
+                sql = "delete from produto_loja where produtoId =" + produtoLoja.Produto.Id + " and LojaId =" + "'" + produtoLoja.Loja.Id + "'";
                 executaSql();
 
             }
@@ -33,7 +33,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "insert into produto_loja (produtoId, cnpj, valor) values(" + produtoLoja.Produto.Id + "," + produtoLoja.Loja.Id + "," + produtoLoja.Preco +")";
+                sql = "insert into produto_loja (produtoId, LojaId, valor) values(" + produtoLoja.Produto.Id + "," + produtoLoja.Loja.Id + "," + produtoLoja.Preco +")";
                 executaSql();
             }
             catch (Exception ex)
@@ -49,15 +49,15 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "select produto.id, produto.codigobarra, produto.nome,produto.descricao,produto.marca" +
-                                     "loja.cnpj, loja.razaosocial,loja.nomefantasia, produto_loja.valor" +
-                             "inner join produto on produto.Id = produto_loja.produtoId" +
-                             "inner join loja on loja.cnpj = produto_loja.cnpj" +
-                             "from produto_loja";
+                string sql = "select produto.id, produto.codigobarra, produto.nome,produto.descricao,produto.marca, " +
+                                     "loja.Id , loja.cnpj, loja.razaosocial,loja.nomefantasia, produto_loja.valor " +
+                                     "from produto_loja "+
+                             "inner join produto on produto.Id = produto_loja.produtoId " +
+                             "inner join loja on loja.Id = produto_loja.LojaId";
 
                 if (filtro.Loja != null) 
                 {
-                    sql += " where produto_loja.cnpj  like '%" + filtro.Loja.Cnpj + "%'";
+                    sql += " where produto_loja.Id  like '%" + filtro.Loja.Id + "%'";
                 }
                 if (filtro.Produto != null)
                 {
@@ -70,18 +70,19 @@ namespace BibliotecaShopFood.Dados
                 {
                     ProdutoLoja produtoLoja = new ProdutoLoja();
                     Produto produto = new Produto();
-                    produto.Id = DbReader.GetInt32(DbReader.GetOrdinal("produto.Id"));
-                    produto.CodigoBarra = DbReader.GetString(DbReader.GetOrdinal("produto.codigobarra"));
-                    produto.Nome = DbReader.GetString(DbReader.GetOrdinal("produto.nome"));
-                    produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("produto.descricao"));
-                    produto.Marca = DbReader.GetString(DbReader.GetOrdinal("produto.marca"));
+                    produto.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
+                    produto.CodigoBarra = DbReader.GetString(DbReader.GetOrdinal("codigobarra"));
+                    produto.Nome = DbReader.GetString(DbReader.GetOrdinal("nome"));
+                    produto.Descricao = DbReader.GetString(DbReader.GetOrdinal("descricao"));
+                    produto.Marca = DbReader.GetString(DbReader.GetOrdinal("marca"));
                     produtoLoja.Produto = produto;
                     Loja loja = new Loja();
-                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("loja.cnpj"));
-                    loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("loja.razaosocial"));
-                    loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("loja.nomefantasia"));
+                    loja.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
+                    loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("cnpj"));
+                    loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
+                    loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));
                     produtoLoja.Loja = loja;
-                    produtoLoja.Preco = DbReader.GetFloat(DbReader.GetOrdinal("produto_loja.valor"));
+                    produtoLoja.Preco = float.Parse(DbReader.GetDecimal(DbReader.GetOrdinal("valor")).ToString());
                     retorno.Add(produtoLoja);
                 }
                 DbReader.Close();
@@ -101,7 +102,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                sql = "update produto_loja set produtoId = '" + produtoLoja.Produto.Id + "', cnpj = '" + produtoLoja.Loja.Cnpj + "', valor = '" + produtoLoja.Preco + "'" + "where produtoId =" + produtoLoja.Produto.CodigoBarra + " and cnpj =" + "'" + produtoLoja.Loja.Cnpj + "'";
+                sql = "update produto_loja set produtoId = '" + produtoLoja.Produto.Id + "', LojaId = '" + produtoLoja.Loja.Id + "', valor = '" + produtoLoja.Preco + "'" + "where produtoId =" + produtoLoja.Produto.CodigoBarra + " and cnpj =" + "'" + produtoLoja.Loja.Cnpj + "'";
                 executaSql();
             }
             catch (Exception ex)

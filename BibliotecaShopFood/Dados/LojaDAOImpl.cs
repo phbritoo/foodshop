@@ -51,7 +51,7 @@ namespace BibliotecaShopFood.Dados
             try
             {
                 this.abrirConexao();
-                string sql = "SELECT CNPJ, RAZAOSOCIAL, NOMEFANTASIA FROM loja where cnpj = cnpj";
+                string sql = "SELECT ID , CNPJ, RAZAOSOCIAL, NOMEFANTASIA FROM loja where cnpj = cnpj";
                 if (filtro.Cnpj != null)
                 {
                     sql += " and cnpj = " + filtro.Cnpj;
@@ -72,6 +72,7 @@ namespace BibliotecaShopFood.Dados
                 while (DbReader.Read())
                 {
                     Loja loja = new Loja();
+                    loja.Id = DbReader.GetInt32(DbReader.GetOrdinal("id"));
                     loja.Cnpj = DbReader.GetString(DbReader.GetOrdinal("cnpj"));
                     loja.RazaoSocial = DbReader.GetString(DbReader.GetOrdinal("razaosocial"));
                     loja.NomeFantasia = DbReader.GetString(DbReader.GetOrdinal("nomefantasia"));

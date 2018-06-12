@@ -421,7 +421,7 @@ namespace WcfFoodShop
             catch (Exception ex)
             {
 
-                throw new Exception("Erro no processo de deletar relação de produto a loja" + ex.Message);
+                throw new Exception("Erro no processo de listar relação de produto a loja" + ex.Message);
             }
         }
     }
