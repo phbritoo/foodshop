@@ -36,6 +36,7 @@
             this.buttonCarrinho = new System.Windows.Forms.Button();
             this.buttonNotaFiscal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonUsuario
@@ -108,6 +109,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(361, 310);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 77);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Dashboard";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +126,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonNotaFiscal);
             this.Controls.Add(this.buttonCarrinho);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button buttonCarrinho;
         private System.Windows.Forms.Button buttonNotaFiscal;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

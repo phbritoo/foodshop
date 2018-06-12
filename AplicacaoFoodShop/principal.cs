@@ -65,5 +65,12 @@ namespace AplicacaoFoodShop
             ProdutoLoja produtoLoja = new ProdutoLoja();
             produtoLoja.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
     }
 }

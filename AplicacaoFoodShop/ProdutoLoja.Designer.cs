@@ -119,6 +119,7 @@
             this.Produto,
             this.Loja,
             this.Preço});
+            this.listViewProdutoLoja.FullRowSelect = true;
             this.listViewProdutoLoja.Location = new System.Drawing.Point(324, 24);
             this.listViewProdutoLoja.Name = "listViewProdutoLoja";
             this.listViewProdutoLoja.Size = new System.Drawing.Size(347, 163);

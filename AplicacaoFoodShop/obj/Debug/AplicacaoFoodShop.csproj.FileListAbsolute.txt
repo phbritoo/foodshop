@@ -112,3 +112,4 @@ C:\Users\paulo\Documents\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.
 C:\Users\paulo\Documents\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.pdb
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Carrinho.resources
 C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.NotaFiscal.resources
+C:\Users\l.moreira.da.silva\source\Repos\foodshop\AplicacaoFoodShop\obj\Debug\AplicacaoFoodShop.Dashboard.resources
